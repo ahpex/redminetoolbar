@@ -1,0 +1,3 @@
+content redminetoolbar jar:chrome/redminetoolbar.jar!/content/
+overlay chrome://browser/content/browser.xul chrome://redminetoolbar/content/redminetoolbar.xul
+skin redminetoolbar classic/1.0 jar:chrome/redminetoolbar.jar!/skin/

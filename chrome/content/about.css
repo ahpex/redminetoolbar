@@ -1,0 +1,20 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#RmTb-About-Details {
+  color: #000000 !important;
+  padding: 0.5em !important;
+}
+
+.name {
+  font-size: x-large !important;
+  padding-right: 0.25em !important;
+}
+
+.title {
+  padding-top: 0.25em !important;
+}
+
+.name, .title {
+  font-weight: bold !important;
+}

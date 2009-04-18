@@ -1,0 +1,3 @@
+content redminetoolbar chrome/content/
+overlay chrome://browser/content/browser.xul chrome://redminetoolbar/content/redminetoolbar.xul
+skin redminetoolbar classic/1.0 chrome/skin/

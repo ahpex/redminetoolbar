@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>redminetoolbar@mpietsch.com</em:id>
+    <em:version>0.3</em:version>
+    <em:type>2</em:type>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>3.0</em:minVersion>
+        <em:maxVersion>3.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:name>Redmine Toolbar</em:name>
+    <em:description>Toolbar for easy access to Redmine projects.</em:description>
+    <em:creator>Michael Pietsch</em:creator>
+    <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+    <em:aboutURL>chrome://redminetoolbar/content/about.xul</em:aboutURL>
+  </Description>
+</RDF>

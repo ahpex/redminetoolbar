@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://redminetoolbar/content/about.css" type="text/css"?>
+
+<dialog buttons="accept"
+        id="RmTb-About-Dialog"
+        title="About Redmine Toolbar"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <vbox id="RmTb-About-Details">
+        <hbox>
+            <description class="name">Redmine Toolbar</description>
+            <description class="name">0.3</description>
+        </hbox>
+        <description value="Author" class="title"/>
+        <description>Michael Pietsch</description>
+        <description value="Homepage" class="title"/>
+        <description>http://www.mpietsch.com/redminetoolbar</description>
+    </vbox>
+    <separator class="groove"/>
+</dialog>
