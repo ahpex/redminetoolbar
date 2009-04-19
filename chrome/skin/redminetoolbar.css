@@ -31,7 +31,7 @@
 #RmTb-Repository-Button {
   list-style-image: url("chrome://redminetoolbar/skin/database_refresh.png");
 }
-#RmTb-ToolbarSettings-Button {
+#RmTb-Options-Button {
   list-style-image: url("chrome://redminetoolbar/skin/wrench.png");
 }
 .RmTb-Activity-Wiki-Edit {

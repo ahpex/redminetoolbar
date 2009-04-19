@@ -53,6 +53,9 @@
                      label="Files" oncommand="RmTb.loadPage('FILES');" />
       <toolbarbutton id="RmTb-Repository-Button" tooltiptext="Go to the Repsitory page"
                      label="Repository" oncommand="RmTb.loadPage('REPOSITORY');" />
+      <toolbarspring />
+      <toolbarbutton id="RmTb-Options-Button" tooltiptext="Open the Options dialog"
+                     oncommand="RmTb.showOptions();" />
    </toolbar>
  </toolbox>
 </overlay>

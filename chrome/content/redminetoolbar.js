@@ -190,6 +190,10 @@ var RmTb= {
                     .getService(Components.interfaces.nsIPrefService);
     var branch = prefs.getBranch("extensions.redminetoolbar.");
     branch.setCharPref("currentproject", projectName);
+  },
+
+  showOptions : function() {
+    window.openDialog("chrome://redminetoolbar/content/options.xul", "Redmine Toolbar Options", "centerscreen,chrome,modal");
   }
 };
 
