@@ -5,7 +5,7 @@ var RmTb_Options = {
     const branch = prefService.getBranch("extensions.redminetoolbar.");
 
     // General
-    document.getElementById("RmTb-Opt-Host").value = branch.getCharPref("host");
+    document.getElementById("RmTb-Opt-Host").value = RmTb.getProjectUrl(); 
 	},
 
   save : function() {

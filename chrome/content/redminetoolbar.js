@@ -22,7 +22,7 @@ var RmTb= {
 
   loadPage : function(page) {
     var url = "";
-    var host = RmTb.getPref('host');
+    var host = RmTb.getProjectUrl();
     var currProj = RmTb.getPref('currentproject');
     
     switch(page) {
@@ -73,7 +73,7 @@ var RmTb= {
       menu.removeChild(menu.childNodes.item(i));
     }
 
-    var host = RmTb.getPref('host');
+    var host = RmTb.getProjectUrl();
     var currProj = RmTb.getPref('currentproject');
 
     var xhr = new XMLHttpRequest();
@@ -149,10 +149,17 @@ var RmTb= {
     for (var j=children.length -1; j >= 0; j--) {
       var tempItem = document.createElement("menuitem");
       tempItem.setAttribute("label", branch.getCharPref(children[j]));
-      var link = RmTb.getPref('host') + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+      var link = RmTb.getProjectUrl + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
       tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + link + "');");
       menu.appendChild(tempItem);
     }
+  },
+
+	getProjectUrl : function() {
+    var currentProject = RmTb.getPref('currentproject');
+    var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                  .getService(Components.interfaces.nsIPrefService);
+    return prefs.getCharPref("extensions.redminetoolbar.projects." + currentProject + ".url");
   },
 
   getPref : function(pref) {
