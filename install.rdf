@@ -17,5 +17,6 @@
     <em:creator>Michael Pietsch</em:creator>
     <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
     <em:aboutURL>chrome://redminetoolbar/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://redminetoolbar/content/options.xul</em:optionsURL>
   </Description>
 </RDF>

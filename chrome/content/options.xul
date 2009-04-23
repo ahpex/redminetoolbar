@@ -10,27 +10,54 @@
         onload="RmTb_Options.load()"
         title="Redmine Toolbar Options">
 
-  <script type="application/x-javascript" src="chrome://redminetoolbar/content/redminetoolbar.js" />
   <script type="application/x-javascript" src="chrome://redminetoolbar/content/options.js" />
 
-  <tabbox>
+  <tabbox flex="1">
     <tabs>
       <tab label="General" />
     </tabs>
 
-    <tabpanels>
+    <tabpanels flex="1">
       <tabpanel id="RmTb-OptTab-General" orient="vertical">
-        <groupbox>
-          <caption label="General" />
-          <hbox>
-            <vbox>
-              <label control="RmTb-Opt-Host" value="Host name:" />
-            </vbox>
-            <vbox>
-              <textbox id="RmTb-Opt-Host" />
-            </vbox>
+        <vbox flex="1">
+          <hbox flex="1">
+            <grid flex="1">
+              <columns>
+                <column />
+                <column flex="1" />
+              </columns>
+              <rows>
+                <row>
+                  <label control="RmTb-Opt-AddEditName" value="Project Name" />
+                  <textbox id="RmTb-Opt-AddEditName" flex="1" />
+                </row>
+                <row>
+                  <label control="RmTb-Opt-AddEditUrl" value="Project URL" />
+                  <textbox id="RmTb-Opt-AddEditUrl" flex="1" />
+                </row>
+              </rows>
+            </grid>
           </hbox>
-        </groupbox>
+          <hbox pack="end">          
+            <button label="Add" oncommand="RmTb_Options.addOrEditProject();" />
+          </hbox>
+          <vbox flex="1">
+            <listbox id="RmTb-Opt-Projects" flex="1">
+              <listhead>
+                <listheader label="Name" />
+                <listheader label="Url" />
+              </listhead>
+              <listcols>
+                <listcol />
+                <listcol flex="1" />
+              </listcols>
+            </listbox> 
+          </vbox>
+          <hbox pack="end">
+            <button label="Remove Project" oncommand="RmTb_Options.removeProject();" />
+            <button label="Remove all Projects" oncommand="RmTb_Options.removeAllProjects();" />
+          </hbox>
+        </vbox>
       </tabpanel>
     </tabpanels>
   </tabbox>

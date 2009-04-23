@@ -56,7 +56,6 @@ var RmTb= {
       default:
         alert('No such page: ' + page);
     }
-
     RmTb.loadUrl(url);
   },
 
@@ -155,11 +154,16 @@ var RmTb= {
     }
   },
 
-	getProjectUrl : function() {
+  getProjectUrl : function() {
     var currentProject = RmTb.getPref('currentproject');
     var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                   .getService(Components.interfaces.nsIPrefService);
-    return prefs.getCharPref("extensions.redminetoolbar.projects." + currentProject + ".url");
+    var branch = prefs.getBranch("extensions.redminetoolbar.projects.name");
+    var children = branch.getChildList("", {});
+    for (var i = 0; i < children.length; i++) {
+    if (prefs.getCharPref("extensions.redminetoolbar.projects.name." + i) == currentProject)
+      return prefs.getCharPref("extensions.redminetoolbar.projects.url." + i);
+    }
   },
 
   getPref : function(pref) {
@@ -177,15 +181,12 @@ var RmTb= {
     var branch = prefs.getBranch("extensions.redminetoolbar.projects.name");
     var children = branch.getChildList("", {});
 
-    // Remove all exisiting items first, otherwise the newly created items
-    // are appended to the list. Skip 
-    for (var i=menu.childNodes.length - 1; i >= 0; i--) {
-      menu.removeChild(menu.childNodes.item(i));
-    }
-    
-    for (var j=children.length -1; j >= 0; j--) {
+    while (menu.hasChildNodes())
+      menu.removeChild(menu.firstChild);
+
+    for (var i = 0; i < children.length; i++) { 
       var tempItem = document.createElement("menuitem");
-      var projectName = branch.getCharPref(children[j]);
+      var projectName = branch.getCharPref(children[i]);
       tempItem.setAttribute("label", projectName);
       tempItem.setAttribute("oncommand", "RmTb.Change_Project('" + projectName + "');");
       menu.appendChild(tempItem);
@@ -200,7 +201,8 @@ var RmTb= {
   },
 
   showOptions : function() {
-    window.openDialog("chrome://redminetoolbar/content/options.xul", "Redmine Toolbar Options", "centerscreen,chrome,modal");
+    var x = window.openDialog("chrome://redminetoolbar/content/options.xul",
+      "Redmine Toolbar Options", "centerscreen,chrome,modal");
   }
 };
 
