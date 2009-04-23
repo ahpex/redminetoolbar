@@ -9,7 +9,7 @@
     <vbox id="RmTb-About-Details">
         <hbox>
             <description class="name">Redmine Toolbar</description>
-            <description class="name">0.3</description>
+            <description class="name">0.4</description>
         </hbox>
         <description value="Author" class="title"/>
         <description>Michael Pietsch</description>
