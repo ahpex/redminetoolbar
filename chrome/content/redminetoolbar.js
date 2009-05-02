@@ -202,7 +202,7 @@ var RmTb= {
 
   showOptions : function() {
     var x = window.openDialog("chrome://redminetoolbar/content/options.xul",
-      "Redmine Toolbar Options", "centerscreen,chrome,modal");
+      "Redmine Toolbar Options", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
   }
 };
 

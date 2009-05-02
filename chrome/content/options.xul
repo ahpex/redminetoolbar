@@ -23,7 +23,7 @@
           <hbox flex="1">
             <grid flex="1">
               <columns>
-                <column />
+                <column flex="1" />
                 <column flex="1" />
               </columns>
               <rows>
@@ -38,7 +38,7 @@
               </rows>
             </grid>
           </hbox>
-          <hbox pack="end">          
+          <hbox pack="end">
             <button label="Add" oncommand="RmTb_Options.addOrEditProject();" />
           </hbox>
           <vbox flex="1">
