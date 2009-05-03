@@ -59,7 +59,27 @@ var RmTb= {
     RmTb.loadUrl(url);
   },
 
-  Populate : function() {
+  getFeed : function(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4) {
+        if(xhr.status == 200) {
+          RmTb.Populate(xhr.responseXML);
+        }
+      }
+    }
+    xhr.send(null);
+  },
+
+  PopulateActivities : function() {
+    var host = RmTb.getProjectUrl();
+    var currProj = RmTb.getPref('currentproject');
+    var url = host + "/projects/" + currProj + "/activity.atom";
+    RmTb.getFeed(url);
+  },
+
+  Populate : function(doc) {
     // Maximum number of menu items
     const MAXENTRIES = 30;
 
@@ -72,58 +92,41 @@ var RmTb= {
       menu.removeChild(menu.childNodes.item(i));
     }
 
-    var host = RmTb.getProjectUrl();
-    var currProj = RmTb.getPref('currentproject');
+    var resolver = function() { return 'http://www.w3.org/2005/Atom'; };
+    var entryElements = doc.evaluate('//myns:entry', doc, resolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    nbEntries = (entryElements.snapshotLength > MAXENTRIES) ? MAXENTRIES : entryElements.snapshotLength;
+    for (var i=0; i < nbEntries; i++) {
+      // Get the single item
+      var entryItem = entryElements.snapshotItem(i);
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", host + "/projects/" + currProj + "/activity.atom", true);
-    xhr.onreadystatechange = function() {
-      if(xhr.readyState == 4) {
-        if(xhr.status == 200) {
-          var doc = xhr.responseXML;
-          resolver = function() {
-          return 'http://www.w3.org/2005/Atom';
-        };
-        var entryElements = doc.evaluate('//myns:entry', doc, resolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
-        nbEntries = (entryElements.snapshotLength > MAXENTRIES) ? MAXENTRIES : entryElements.snapshotLength;
-        for (var i=0; i < nbEntries; i++) {
-          // Get the single item
-          var entryItem = entryElements.snapshotItem(i);
+      // Create a new menu item to be added
+      var tempItem = document.createElement("menuitem");
+      
+      // Get the label from the feed entry
+      var title = entryItem.getElementsByTagName('title')[0].firstChild.nodeValue; 
 
-          // Create a new menu item to be added
-          var tempItem = document.createElement("menuitem");
-          
-          // Get the label from the feed entry
-          var title = entryItem.getElementsByTagName('title')[0].firstChild.nodeValue; 
+      // Set the new menu item's label
+      tempItem.setAttribute("label", title);
+      
+      // Add a menu icon
+      if (RmTb.StartsWith(title, "Wiki edit"))
+        tempItem.setAttribute("class", "RmTb-Activity-Wiki-Edit");
+      else if (RmTb.StartsWith(title, "Revision")) 
+        tempItem.setAttribute("class", "RmTb-Activity-Changeset");
+      else if (RmTb.StartsWith(title, "Feature")) 
+        tempItem.setAttribute("class", "RmTb-Activity-Feature");
+      else if (RmTb.StartsWith(title, "Patch")) 
+        tempItem.setAttribute("class", "RmTb-Activity-Patch");
 
-          // Set the new menu item's label
-          tempItem.setAttribute("label", title);
-          
-          // Add a menu icon
-          if (RmTb.StartsWith(title, "Wiki edit"))
-            tempItem.setAttribute("class", "RmTb-Activity-Wiki-Edit");
-          else if (RmTb.StartsWith(title, "Revision")) 
-            tempItem.setAttribute("class", "RmTb-Activity-Changeset");
-          else if (RmTb.StartsWith(title, "Feature")) 
-            tempItem.setAttribute("class", "RmTb-Activity-Feature");
-          else if (RmTb.StartsWith(title, "Patch")) 
-            tempItem.setAttribute("class", "RmTb-Activity-Patch");
+      // get the URL from the feed entry
+      var url = entryItem.getElementsByTagName('link')[0].getAttribute('href');
 
-          // get the URL from the feed entry
-          var url = entryItem.getElementsByTagName('link')[0].getAttribute('href');
+      // Set the new menu item's action
+      tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + url + "');");
 
-          // Set the new menu item's action
-          tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + url + "');");
-
-          // Add the item to out menu
-          menu.appendChild(tempItem);
-        }
-      }
-      else
-        alert(xhr.status);
-      }
-    };
-    xhr.send(null);
+      // Add the item to out menu
+      menu.appendChild(tempItem);
+    }
   },
 
   StartsWith : function(haystack, needle) {

@@ -27,9 +27,8 @@
                      label="Overview" oncommand="RmTb.loadPage('OVERVIEW');" />
       <toolbarbutton id="RmTb-Activity-Button" tooltiptext="Go to the Activity page"
                      label="Activity" type="menu">
-        <menupopup id="RmTb-Activity-Popup" onpopupshowing="RmTb.Populate();">
-        <!-- menuitems are automatically generated -->
-          <menuitem label="Loading..." />
+        <menupopup id="RmTb-Activity-Popup" onpopupshowing="RmTb.PopulateActivities();">
+          <!-- menuitems are automatically generated -->
         </menupopup>
       </toolbarbutton>
       <toolbarbutton id="RmTb-Issues-Button" tooltiptext="Go to the Issues page"
