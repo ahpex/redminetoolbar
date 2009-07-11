@@ -1,5 +1,7 @@
 var RmTb= {
 
+  urlExists : false,
+
   Init : function() {
     // Set the project title to be the current project title
     RmTb.Change_Project_Label();
@@ -75,9 +77,28 @@ var RmTb= {
   PopulateActivities : function() {
     var host = RmTb.getProjectUrl();
     var currProj = RmTb.getPref('currentproject');
-    var url = host + "/projects/" + currProj + "/activity.atom";
-    RmTb.getFeed(url);
+    var url = host + "/projects/activity/" + currProj + "?format=atom";
+    if (RmTb.UrlExists(url)) {
+			RmTb.getFeed(url);
+		} else {
+			url = host + "/projects/" + currProj + "/activity.atom";
+			RmTb.getFeed(url);
+		}
   },
+
+  UrlExists : function(url) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("HEAD", url, true);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+			  if (xhr.status == 200) {
+					RmTb.urlExists = true;
+				}
+			}
+		}
+		xhr.send(null);
+		return RmTb.urlExists;
+	},
 
   Populate : function(doc) {
     // Maximum number of menu items
