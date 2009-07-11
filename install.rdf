@@ -18,5 +18,6 @@
     <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
     <em:aboutURL>chrome://redminetoolbar/content/about.xul</em:aboutURL>
     <em:optionsURL>chrome://redminetoolbar/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://redminetoolbar/skin/redmine_icon.png</em:iconURL>
   </Description>
 </RDF>
