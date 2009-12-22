@@ -3,15 +3,17 @@ var RmTb= {
   urlExists : false,
 
   Init : function() {
+		jQuery.noConflict();
+		$ = function(selector,context){ return new jQuery.fn.init(selector,context); };
+		$.fn = $.prototype = jQuery.fn;
+
     // Set the project title to be the current project title
     RmTb.Change_Project_Label();
     window.getBrowser().addProgressListener(RMTB_Listener, Components.interfaces.nsIWebProgress.NOTIFY_STATE_DOCUMENT);  
   },
 
   Change_Project_Label : function() {
-    var projButton = document.getElementById('RmTb-Project-Button');
-    if (projButton)
-      projButton.setAttribute('label', RmTb.getPref('currentproject'));
+		$('#RmTb-Project-Button').attr('label', RmTb.getPref('currentproject'));
   },
 
   Exit : function() {
