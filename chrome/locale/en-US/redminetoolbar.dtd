@@ -25,6 +25,7 @@
 
 <!ENTITY redminetoolbar.button.wiki.label "Wiki">
 <!ENTITY redminetoolbar.tooltip.wiki "Go to the 'Wiki' page">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Wiki Main Page">
 
 <!ENTITY redminetoolbar.button.files.label "Files">
 <!ENTITY redminetoolbar.tooltip.files "Go to the 'Files' page">
@@ -34,3 +35,13 @@
 
 <!ENTITY redminetoolbar.button.options.label "Options">
 <!ENTITY redminetoolbar.tooltip.options "Show options">
+
+<!-- Options dialog -->
+<!ENTITY redminetoolbar.options.tabgeneral.label "General">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "Name">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
+<!ENTITY redminetoolbar.options.tabgeneral.add "Add">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "Remove">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "Remove all">

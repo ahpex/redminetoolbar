@@ -45,9 +45,9 @@
                      label="&redminetoolbar.button.wiki.label;" type="menu">
         <menupopup id="RmTb-Wiki-Popup" onpopupshowing="RmTb.Wiki_Populate();">
           <!-- menuitems are automatically generated -->
-          <menuitem label="Wiki Main Page" oncommand="RmTb.loadPage('WIKI');" /> 
+          <menuitem label="&redminetoolbar.button.wikimainpage.label;" oncommand="RmTb.loadPage('WIKI');" /> 
             <menuseparator /> 
-            <menuitem label="Loading..." />
+            <menuitem label="&redminetoolbar.button.loading.label;" />
           </menupopup>
       </toolbarbutton>  
       <toolbarbutton id="RmTb-Files-Button" tooltiptext="&redminetoolbar.tooltip.files;"
