@@ -1,0 +1,47 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "Keine">
+<!ENTITY redminetoolbar.button.loading.label "Wird geladen...">
+
+<!ENTITY redminetoolbar.button.mypage.label "Meine Seite">
+<!ENTITY redminetoolbar.tooltip.mypage "Gehe zu 'Meine Seite'">
+
+<!ENTITY redminetoolbar.button.overview.label "Übersicht">
+<!ENTITY redminetoolbar.tooltip.overview "Gehe zur Übersicht">
+
+<!ENTITY redminetoolbar.button.activity.label "Aktivitäten">
+<!ENTITY redminetoolbar.tooltip.activity "Gehe zur Aktivitäten-Seite">
+
+<!ENTITY redminetoolbar.button.issues.label "Tickets">
+<!ENTITY redminetoolbar.tooltip.issues "Gehe zu aktuellen Tickets">
+
+<!ENTITY redminetoolbar.button.newissue.label "Neues Ticket">
+<!ENTITY redminetoolbar.tooltip.newissue "Schreibe eine neues Ticket">
+
+<!ENTITY redminetoolbar.button.news.label "Neuigkeiten">
+<!ENTITY redminetoolbar.tooltip.news "Gehe zu den Neuigkeiten">
+
+<!ENTITY redminetoolbar.button.docs.label "Dokumente">
+<!ENTITY redminetoolbar.tooltip.docs "Gehe zur Dokumentenseite">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "Gehe zum Wiki">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Wiki Hauptseite">
+
+<!ENTITY redminetoolbar.button.files.label "Dateien">
+<!ENTITY redminetoolbar.tooltip.files "Gehe zu den Dateien">
+
+<!ENTITY redminetoolbar.button.repository.label "Projektarchiv">
+<!ENTITY redminetoolbar.tooltip.repository "Gehe zum Projektarchiv">
+
+<!ENTITY redminetoolbar.button.options.label "Optionen">
+<!ENTITY redminetoolbar.tooltip.options "Optionen anzeigen">
+
+<!-- Options dialog -->
+<!ENTITY redminetoolbar.options.tabgeneral.label "Allgemein">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "Name">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
+<!ENTITY redminetoolbar.options.tabgeneral.add "Hinzufügen">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "Entfernen">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "Alle entfernen">
