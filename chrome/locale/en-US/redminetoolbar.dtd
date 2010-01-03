@@ -1,0 +1,36 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "None">
+<!ENTITY redminetoolbar.button.loading.label "Loading...">
+
+<!ENTITY redminetoolbar.button.mypage.label "My Page">
+<!ENTITY redminetoolbar.tooltip.mypage "Go to the 'My Page' page">
+
+<!ENTITY redminetoolbar.button.overview.label "Overview">
+<!ENTITY redminetoolbar.tooltip.overview "Go to the 'Overview' page">
+
+<!ENTITY redminetoolbar.button.activity.label "Activities">
+<!ENTITY redminetoolbar.tooltip.activity "Go to the 'Activity' page">
+
+<!ENTITY redminetoolbar.button.issues.label "Issues">
+<!ENTITY redminetoolbar.tooltip.issues "Go to the 'Issues' page">
+
+<!ENTITY redminetoolbar.button.newissue.label "New Issue">
+<!ENTITY redminetoolbar.tooltip.newissue "Go to the 'New Issue' page">
+
+<!ENTITY redminetoolbar.button.news.label "News">
+<!ENTITY redminetoolbar.tooltip.news "Go to the 'News' page">
+
+<!ENTITY redminetoolbar.button.docs.label "Documents">
+<!ENTITY redminetoolbar.tooltip.docs "Go to the 'Documents' page">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "Go to the 'Wiki' page">
+
+<!ENTITY redminetoolbar.button.files.label "Files">
+<!ENTITY redminetoolbar.tooltip.files "Go to the 'Files' page">
+
+<!ENTITY redminetoolbar.button.repository.label "Repository">
+<!ENTITY redminetoolbar.tooltip.repository "Go to the 'Repository' page">
+
+<!ENTITY redminetoolbar.button.options.label "Options">
+<!ENTITY redminetoolbar.tooltip.options "Show options">

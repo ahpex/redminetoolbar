@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://redminetoolbar/locale/redminetoolbar.dtd">
 <?xml-stylesheet href="chrome://redminetoolbar/skin/redminetoolbar.css" type="text/css"?>
 <overlay id="RmTb-Overlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -15,33 +16,33 @@
              class="chromeclass-toolbar" context="toolbar-context-menu" 
              hidden="false" persist="hidden">
       <toolbarbutton id="RmTb-Project-Button" tooltiptext="Project Name"
-                     label="None" type="menu">
+                     label="&redminetoolbar.button.project.label;" type="menu">
         <menupopup id="RmTb-Project-Popup" onpopupshowing="RmTb.PopulateProjects();">
-          <menuitem label="Loading..." />
+          <menuitem label="&redminetoolbar.button.loading.label;" />
         </menupopup>
       </toolbarbutton>
       <toolbarseparator />
-      <toolbarbutton id="RmTb-MyPage-Button" tooltiptext="Go to the personal page"
-                     label="My Page" oncommand="RmTb.loadPage('MYPAGE');" />
+      <toolbarbutton id="RmTb-MyPage-Button" tooltiptext="&redminetoolbar.tooltip.mypage;"
+                     label="&redminetoolbar.button.mypage.label;" oncommand="RmTb.loadPage('MYPAGE');" />
       <toolbarseparator />
-      <toolbarbutton id="RmTb-Overview-Button" tooltiptext="Go to the Overview page"
-                     label="Overview" oncommand="RmTb.loadPage('OVERVIEW');" />
-      <toolbarbutton id="RmTb-Activity-Button" tooltiptext="Go to the Activity page"
-                     label="Activity" type="menu">
+      <toolbarbutton id="RmTb-Overview-Button" tooltiptext="&redminetoolbar.tooltip.overview;"
+                     label="&redminetoolbar.button.overview.label;" oncommand="RmTb.loadPage('OVERVIEW');" />
+      <toolbarbutton id="RmTb-Activity-Button" tooltiptext="&redminetoolbar.tooltip.activity;"
+                     label="&redminetoolbar.button.activity.label;" type="menu">
         <menupopup id="RmTb-Activity-Popup" onpopupshowing="RmTb.PopulateActivities();">
           <!-- menuitems are automatically generated -->
         </menupopup>
       </toolbarbutton>
-      <toolbarbutton id="RmTb-Issues-Button" tooltiptext="Go to the Issues page"
-                     label="Issues" oncommand="RmTb.loadPage('ISSUES');" />
-      <toolbarbutton id="RmTb-NewIssue-Button" tooltiptext="Go to the New Issued page"
-                     label="New Issue" oncommand="RmTb.loadPage('NEWISSUE');" />
-      <toolbarbutton id="RmTb-News-Button" tooltiptext="Go to the News page"
-                     label="News" oncommand="RmTb.loadPage('NEWS');" />
-      <toolbarbutton id="RmTb-Docs-Button" tooltiptext="Go to the Documents page"
-                     label="Docs" oncommand="RmTb.loadPage('DOCS');" />
-      <toolbarbutton id="RmTb-Wiki-Button" tooltiptext="Go to the Wiki page"
-                     label="Wiki" type="menu">
+      <toolbarbutton id="RmTb-Issues-Button" tooltiptext="&redminetoolbar.tooltip.issues;"
+                     label="&redminetoolbar.button.issues.label;" oncommand="RmTb.loadPage('ISSUES');" />
+      <toolbarbutton id="RmTb-NewIssue-Button" tooltiptext="&redminetoolbar.tooltip.newissue;"
+                     label="&redminetoolbar.button.newissue.label;" oncommand="RmTb.loadPage('NEWISSUE');" />
+      <toolbarbutton id="RmTb-News-Button" tooltiptext="&redminetoolbar.tooltip.news;"
+                     label="&redminetoolbar.button.news.label;" oncommand="RmTb.loadPage('NEWS');" />
+      <toolbarbutton id="RmTb-Docs-Button" tooltiptext="&redminetoolbar.tooltip.docs;"
+                     label="&redminetoolbar.button.docs.label;" oncommand="RmTb.loadPage('DOCS');" />
+      <toolbarbutton id="RmTb-Wiki-Button" tooltiptext="&redminetoolbar.tooltip.wiki;"
+                     label="&redminetoolbar.button.wiki.label;" type="menu">
         <menupopup id="RmTb-Wiki-Popup" onpopupshowing="RmTb.Wiki_Populate();">
           <!-- menuitems are automatically generated -->
           <menuitem label="Wiki Main Page" oncommand="RmTb.loadPage('WIKI');" /> 
@@ -49,13 +50,13 @@
             <menuitem label="Loading..." />
           </menupopup>
       </toolbarbutton>  
-      <toolbarbutton id="RmTb-Files-Button" tooltiptext="Go to the Files page"
-                     label="Files" oncommand="RmTb.loadPage('FILES');" />
-      <toolbarbutton id="RmTb-Repository-Button" tooltiptext="Go to the Repsitory page"
-                     label="Repository" oncommand="RmTb.loadPage('REPOSITORY');" />
+      <toolbarbutton id="RmTb-Files-Button" tooltiptext="&redminetoolbar.tooltip.files;"
+                     label="&redminetoolbar.button.files.label;" oncommand="RmTb.loadPage('FILES');" />
+      <toolbarbutton id="RmTb-Repository-Button" tooltiptext="&redminetoolbar.tooltip.repository;"
+                     label="&redminetoolbar.button.repository.label;" oncommand="RmTb.loadPage('REPOSITORY');" />
       <toolbarspring />
-      <toolbarbutton id="RmTb-Options-Button" tooltiptext="Open the Options dialog"
-                     oncommand="RmTb.showOptions();" />
+      <toolbarbutton id="RmTb-Options-Button" tooltiptext="&redminetoolbar.tooltip.options;"
+                     label="&redminetoolbar.button.options.label;" oncommand="RmTb.showOptions();" />
    </toolbar>
  </toolbox>
 </overlay>
