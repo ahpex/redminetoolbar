@@ -46,6 +46,7 @@
         <menupopup id="RmTb-Wiki-Popup" onpopupshowing="RmTb.Wiki_Populate();">
           <!-- menuitems are automatically generated -->
           <menuitem label="&redminetoolbar.button.wikimainpage.label;" oncommand="RmTb.loadPage('WIKI');" /> 
+          <menuitem label="&redminetoolbar.button.wikiaddpage.label;" oncommand="RmTb.showWikipagesDialog();" /> 
             <menuseparator /> 
             <menuitem label="&redminetoolbar.button.loading.label;" />
           </menupopup>

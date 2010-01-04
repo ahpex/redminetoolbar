@@ -161,7 +161,7 @@ var RmTb= {
 
     // Remove all exisiting items first, otherwise the newly created items
     // are appended to the list. Skip 
-    var skipEntries = 2;
+    var skipEntries = 3;
     for (var i=menu.childNodes.length - 1; i >= skipEntries; i--) {
       menu.removeChild(menu.childNodes.item(i));
     }
@@ -229,6 +229,11 @@ var RmTb= {
   showOptions : function() {
     var x = window.openDialog("chrome://redminetoolbar/content/options.xul",
       "Redmine Toolbar Options", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
+  },
+  
+  showWikipagesDialog : function() {
+    var x = window.openDialog("chrome://redminetoolbar/content/wikipages.xul",
+      "Redmine Toolbar Wikipages", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
   }
 };
 

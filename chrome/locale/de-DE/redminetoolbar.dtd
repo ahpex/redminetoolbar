@@ -26,6 +26,7 @@
 <!ENTITY redminetoolbar.button.wiki.label "Wiki">
 <!ENTITY redminetoolbar.tooltip.wiki "Gehe zum Wiki">
 <!ENTITY redminetoolbar.button.wikimainpage.label "Wiki Hauptseite">
+<!ENTITY redminetoolbar.button.wikiaddpage.label "Wikiseite editieren">
 
 <!ENTITY redminetoolbar.button.files.label "Dateien">
 <!ENTITY redminetoolbar.tooltip.files "Gehe zu den Dateien">
@@ -46,3 +47,11 @@
 <!ENTITY redminetoolbar.options.tabgeneral.add "Hinzufügen">
 <!ENTITY redminetoolbar.options.tabgeneral.remove "Entfernen">
 <!ENTITY redminetoolbar.options.tabgeneral.removeall "Alle entfernen">
+
+<!-- Wikipages dialog -->
+<!ENTITY redminetoolbar.wikipages.window.title "Redmine Toolbar Wiki Seiten">
+<!ENTITY redminetoolbar.wikipages.help "Geben Sie den Namen der Wiki-Seite genauso ein, wie er im Wiki steht (CamelCase).">
+<!ENTITY redminetoolbar.wikipages.name "Name">
+<!ENTITY redminetoolbar.wikipages.add "Hinzufügen">
+<!ENTITY redminetoolbar.wikipages.remove "Entfernen">
+<!ENTITY redminetoolbar.wikipages.removeall "Alle entfernen">
