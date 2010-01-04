@@ -9,7 +9,9 @@
         orient="vertical"
         ondialogaccept="RmTb_Options.save()"
         onload="RmTb_Options.load()"
-        title="Redmine Toolbar Options">
+        title="&redminetoolbar.options.window.title;"
+        width="600"
+        height="400">
 
   <script type="application/x-javascript" src="chrome://redminetoolbar/content/options.js" />
 
@@ -21,26 +23,26 @@
     <tabpanels flex="1">
       <tabpanel id="RmTb-OptTab-General" orient="vertical">
         <vbox flex="1">
-          <hbox flex="1">
+          <hbox>
             <grid flex="1">
               <columns>
-                <column flex="1" />
+                <column />
                 <column flex="1" />
               </columns>
               <rows>
                 <row>
                   <label control="RmTb-Opt-AddEditName" value="&redminetoolbar.options.tabgeneral.projectname;" />
-                  <textbox id="RmTb-Opt-AddEditName" flex="1" />
+                  <textbox id="RmTb-Opt-AddEditName" />
                 </row>
                 <row>
                   <label control="RmTb-Opt-AddEditUrl" value="&redminetoolbar.options.tabgeneral.projecturl;" />
-                  <textbox id="RmTb-Opt-AddEditUrl" flex="1" />
+                  <textbox id="RmTb-Opt-AddEditUrl" />
                 </row>
               </rows>
             </grid>
           </hbox>
           <hbox pack="end">
-            <button label="Add" oncommand="RmTb_Options.addOrEditProject();" />
+            <button label="&redminetoolbar.options.tabgeneral.add;" oncommand="RmTb_Options.addOrEditProject();" />
           </hbox>
           <vbox flex="1">
             <listbox id="RmTb-Opt-Projects" flex="1">

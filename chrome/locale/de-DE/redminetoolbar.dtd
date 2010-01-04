@@ -37,6 +37,7 @@
 <!ENTITY redminetoolbar.tooltip.options "Optionen anzeigen">
 
 <!-- Options dialog -->
+<!ENTITY redminetoolbar.options.window.title "Redmine Toolbar Optionen">
 <!ENTITY redminetoolbar.options.tabgeneral.label "Allgemein">
 
 <!-- General options tab -->
