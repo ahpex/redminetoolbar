@@ -168,15 +168,14 @@ var RmTb= {
 
     var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                  .getService(Components.interfaces.nsIPrefService);
-    var branch = prefs.getBranch("extensions.redminetoolbar.projects." + RmTb.getPref("currentproject") + ".wikipage.");
+    var branch = prefs.getBranch("extensions.redminetoolbar.project." + RmTb.getPref("currentproject") + ".wikipage.");
     var children = branch.getChildList("", {});
 
     for (var j=children.length -1; j >= 0; j--) {
-      var tempItem = document.createElement("menuitem");
-      tempItem.setAttribute("label", branch.getCharPref(children[j]));
-      var link = RmTb.getProjectUrl + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
-      tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + link + "');");
-      menu.appendChild(tempItem);
+      var link = RmTb.getProjectUrl() + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+      $('<menuitem>').attr('label', branch.getCharPref(children[j]))
+                     .attr('oncommand', "RmTb.loadUrl('" + link + "');")
+                     .appendTo('#RmTb-Wiki-Popup');
     }
   },
 
@@ -190,6 +189,7 @@ var RmTb= {
     if (prefs.getCharPref("extensions.redminetoolbar.projects.name." + i) == currentProject)
       return prefs.getCharPref("extensions.redminetoolbar.projects.url." + i);
     }
+	return "No project";
   },
 
   getPref : function(pref) {
