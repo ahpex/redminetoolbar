@@ -3,17 +3,15 @@ var RmTb= {
   urlExists : false,
 
   Init : function() {
-		jQuery.noConflict();
-		$ = function(selector,context){ return new jQuery.fn.init(selector,context); };
-		$.fn = $.prototype = jQuery.fn;
-
     // Set the project title to be the current project title
     RmTb.Change_Project_Label();
     window.getBrowser().addProgressListener(RMTB_Listener, Components.interfaces.nsIWebProgress.NOTIFY_STATE_DOCUMENT);  
   },
 
   Change_Project_Label : function() {
-		$('#RmTb-Project-Button').attr('label', RmTb.getPref('currentproject'));
+    var projButton = document.getElementById('RmTb-Project-Button');
+    if (projButton)
+       projButton.setAttribute('label', RmTb.getPref('currentproject'));
   },
 
   Exit : function() {
@@ -173,9 +171,11 @@ var RmTb= {
 
     for (var j=children.length -1; j >= 0; j--) {
       var link = RmTb.getProjectUrl() + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
-      $('<menuitem>').attr('label', branch.getCharPref(children[j]))
-                     .attr('oncommand', "RmTb.loadUrl('" + link + "');")
-                     .appendTo('#RmTb-Wiki-Popup');
+      var tempItem = document.createElement("menuitem");
+      tempItem.setAttribute("label", branch.getCharPref(children[j]));
+      var link = RmTb.getProjectUrl() + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+      tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + link + "');");
+      menu.appendChild(tempItem);
     }
   },
 
