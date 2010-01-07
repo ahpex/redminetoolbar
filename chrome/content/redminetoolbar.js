@@ -5,7 +5,6 @@ var RmTb= {
   Init : function() {
     // Set the project title to be the current project title
     RmTb.Change_Project_Label();
-    window.getBrowser().addProgressListener(RMTB_Listener, Components.interfaces.nsIWebProgress.NOTIFY_STATE_DOCUMENT);  
   },
 
   Change_Project_Label : function() {
@@ -236,62 +235,6 @@ var RmTb= {
       "Redmine Toolbar Wikipages", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
   }
 };
-
-var RMTB_Listener = {
-  onLocationChange: function(progress, request, location) {
-    if (location) {
-      // do something on location change
-    }
-  },
-
-  onProgressChange: function(webprogress, request, curselfprogres, maxselfprogress, curtotalprogress, maxtotalprogress) {},
-  onStatusChange: function(webprogress, request, status, message) {}, 
-  onSecurityChange: function(webprogress, request, state) {},
-  onLinkIconAvailable: function(a) {},
-  onStateChange: function(webprogress, request, stateFlags, status) {
-    if (stateFlags & Components.interfaces.nsIWebProgressListener.STATE_STOP) {
-      // do something when page has finished loading
-    }
-  }
-};
-
-var redminePrefObserver = {
-  register: function() {
-    // First we'll need the preference services to look for preferences.
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-                                .getService(Components.interfaces.nsIPrefService);
-
-    // For this._branch we ask that the preferences for extensions.myextension. and children
-    this._branch = prefService.getBranch("extensions.redminetoolbar.");
-
-    // Now we queue the interface called nsIPrefBranch2. This interface is described as:  
-    // "nsIPrefBranch2 allows clients to observe changes to pref values."
-    this._branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
-
-    // Finally add the observer.
-    this._branch.addObserver("", this, false);
-  },
-
-  unregister: function() {
-    if(!this._branch) return;
-    this._branch.removeObserver("", this);
-  },
-
-  observe: function(aSubject, aTopic, aData) {
-    if(aTopic != "nsPref:changed") return;
-    // aSubject is the nsIPrefBranch we're observing (after appropriate QI)
-    // aData is the name of the pref that's been changed (relative to aSubject)
-    switch (aData) {
-      case "pref1":
-        // extensions.myextension.pref1 was changed
-        break;
-      case "pref2":
-        // extensions.myextension.pref2 was changed
-        break;
-    }
-  }
-}
-redminePrefObserver.register();
 
 function PrefListener(branchName, func) {
   var prefService = Components.classes["@mozilla.org/preferences-service;1"]
