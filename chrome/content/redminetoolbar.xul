@@ -56,7 +56,13 @@
                      label="&redminetoolbar.button.repository.label;" oncommand="RmTb.loadPage('REPOSITORY');" />
       <toolbarspring />
       <toolbarbutton id="RmTb-Options-Button" tooltiptext="&redminetoolbar.tooltip.options;"
-                     label="&redminetoolbar.button.options.label;" oncommand="RmTb.showOptions();" />
+                     label="&redminetoolbar.button.options.label;" type="menu">
+        <menupopup id="RmTb-Options-Popup">
+          <menuitem label="&redminetoolbar.button.options.label;" oncommand="RmTb.showOptions();" /> 
+          <menuseparator /> 
+          <menuitem label="&redminetoolbar.button.about.label;" oncommand="RmTb.showAboutDialog();" />
+        </menupopup>
+     </toolbarbutton>
    </toolbar>
  </toolbox>
 </overlay>

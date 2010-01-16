@@ -233,6 +233,11 @@ var RmTb= {
   showWikipagesDialog : function() {
     var x = window.openDialog("chrome://redminetoolbar/content/wikipages.xul",
       "Redmine Toolbar Wikipages", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
+  },
+  
+  showAboutDialog : function() {
+    var x = window.openDialog("chrome://redminetoolbar/content/about.xul",
+      "Redmine Toolbar About", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
   }
 };
 

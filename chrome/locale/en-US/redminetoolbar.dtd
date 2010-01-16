@@ -36,6 +36,7 @@
 
 <!ENTITY redminetoolbar.button.options.label "Options">
 <!ENTITY redminetoolbar.tooltip.options "Show options">
+<!ENTITY redminetoolbar.button.about.label "About...">
 
 <!-- Options dialog -->
 <!ENTITY redminetoolbar.options.window.title "Redmine Toolbar Options">
@@ -55,3 +56,7 @@
 <!ENTITY redminetoolbar.wikipages.add "Add">
 <!ENTITY redminetoolbar.wikipages.remove "Remove">
 <!ENTITY redminetoolbar.wikipages.removeall "Remove all">
+
+<!-- About dialog -->
+<!ENTITY redminetoolbar.about.window.title "About Redmine Toolbar">
+<!ENTITY redminetoolbar.about.author "Author">
