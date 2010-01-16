@@ -1,55 +1,55 @@
-#RmTb-Project-Button {
+#RedmineToolbar-Project-Button {
   list-style-image: url("chrome://redminetoolbar/skin/brick.png");
 }
-#RmTb-MyPage-Button {
+#RedmineToolbar-MyPage-Button {
   list-style-image: url("chrome://redminetoolbar/skin/house.png");
 }
-#RmTb-Overview-Button {
+#RedmineToolbar-Overview-Button {
   list-style-image: url("chrome://redminetoolbar/skin/world_orbit.png");
 }
-#RmTb-Activity-Button {
+#RedmineToolbar-Activity-Button {
   list-style-image: url("chrome://redminetoolbar/skin/sport_soccer.png");
 }
-#RmTb-Issues-Button {
+#RedmineToolbar-Issues-Button {
   list-style-image: url("chrome://redminetoolbar/skin/bug.png");
 }
-#RmTb-NewIssue-Button {
+#RedmineToolbar-NewIssue-Button {
   list-style-image: url("chrome://redminetoolbar/skin/bug_add.png");
 }
-#RmTb-News-Button {
+#RedmineToolbar-News-Button {
   list-style-image: url("chrome://redminetoolbar/skin/rss.png");
 }
-#RmTb-Docs-Button {
+#RedmineToolbar-Docs-Button {
   list-style-image: url("chrome://redminetoolbar/skin/page_white_word.png");
 }
-#RmTb-Wiki-Button {
+#RedmineToolbar-Wiki-Button {
   list-style-image: url("chrome://redminetoolbar/skin/user_comment.png");
 }
-#RmTb-Files-Button {
+#RedmineToolbar-Files-Button {
   list-style-image: url("chrome://redminetoolbar/skin/folder.png");
 }
-#RmTb-Repository-Button {
+#RedmineToolbar-Repository-Button {
   list-style-image: url("chrome://redminetoolbar/skin/database_refresh.png");
 }
-#RmTb-Options-Button {
+#RedmineToolbar-Options-Button {
   list-style-image: url("chrome://redminetoolbar/skin/wrench.png");
 }
-.RmTb-Activity-Wiki-Edit {
+.RedmineToolbar-Activity-Wiki-Edit {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/wiki_edit.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
-.RmTb-Activity-Changeset {
+.RedmineToolbar-Activity-Changeset {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/changeset.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
-.RmTb-Activity-Feature {
+.RedmineToolbar-Activity-Feature {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/ticket.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
-.RmTb-Activity-Patch {
+.RedmineToolbar-Activity-Patch {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/ticket_checked.png");
   -moz-image-region: rect(0px 16px 16px 0px);

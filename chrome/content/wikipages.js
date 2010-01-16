@@ -1,4 +1,4 @@
-var RmTb_Wikipages = {
+var RedmineToolbar_Wikipages = {
 
   load : function() {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"]
@@ -9,7 +9,7 @@ var RmTb_Wikipages = {
 	// List of projects
     var names = branch.getChildList("", {});
     for (var i = 0; i < names.length; i++) {
-      RmTb_Wikipages.addToList(branch.getCharPref(i));
+      RedmineToolbar_Wikipages.addToList(branch.getCharPref(i));
     }
   },
 
@@ -22,7 +22,7 @@ var RmTb_Wikipages = {
     branch.deleteBranch("project." + curProj + ".wikipage");
 
     // and add them again
-    var pagesList = document.getElementById("RmTb-Wikipages-Pages");
+    var pagesList = document.getElementById("RedmineToolbar-Wikipages-Pages");
     var pages = pagesList.getElementsByTagName("listitem");
     for (var i = 0; i < pages.length; i++) {
       var items = pages[i].childNodes;
@@ -31,13 +31,13 @@ var RmTb_Wikipages = {
   },
 
   addOrEdit: function() {
-    if (document.getElementById("RmTb-Wikipage-AddEditName").value != "") {
-      RmTb_Wikipages.addToList(document.getElementById("RmTb-Wikipage-AddEditName").value);
+    if (document.getElementById("RedmineToolbar-Wikipage-AddEditName").value != "") {
+      RedmineToolbar_Wikipages.addToList(document.getElementById("RedmineToolbar-Wikipage-AddEditName").value);
     }
   },
 
   addToList : function(name) {
-    var pagesList = document.getElementById("RmTb-Wikipages-Pages");
+    var pagesList = document.getElementById("RedmineToolbar-Wikipages-Pages");
     var pages = document.createElement("listitem");
     var pName = document.createElement("listcell");
     pName.setAttribute("label", name);
@@ -54,7 +54,7 @@ var RmTb_Wikipages = {
                         "Do not ask me again", check);
 
     if (result) {
-      var pagesList = document.getElementById("RmTb-Wikipages-Pages");
+      var pagesList = document.getElementById("RedmineToolbar-Wikipages-Pages");
       var elements = pagesList.getElementsByTagName("listitem");
       for (var i = elements.length-1; i >= 0; i--) {
         elements[i].parentNode.removeChild(elements[i]); 
@@ -63,7 +63,7 @@ var RmTb_Wikipages = {
   },
 
   remove: function() {
-    var pagesList = document.getElementById("RmTb-Wikipages-Pages");
+    var pagesList = document.getElementById("RedmineToolbar-Wikipages-Pages");
     var elements = pagesList.getElementsByTagName("listitem");
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].hasAttribute("selected"))

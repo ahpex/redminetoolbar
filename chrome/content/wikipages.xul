@@ -3,12 +3,12 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://mozapps/skin/pref/pref.css" type="text/css"?>
 
-<dialog id="RmTb-Options-Dialog"
+<dialog id="RedmineToolbar-Options-Dialog"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept, cancel"
         orient="vertical"
-        ondialogaccept="RmTb_Wikipages.save()"
-        onload="RmTb_Wikipages.load()"
+        ondialogaccept="RedmineToolbar_Wikipages.save()"
+        onload="RedmineToolbar_Wikipages.load()"
         title="&redminetoolbar.wikipages.window.title;"
         width="600"
         height="400">
@@ -20,16 +20,16 @@
             <label value="&redminetoolbar.wikipages.help;" />
           </hbox>
           <hbox>
-            <label control="RmTb-Wikipage-AddEditName" value="&redminetoolbar.wikipages.name;:" />
+            <label control="RedmineToolbar-Wikipage-AddEditName" value="&redminetoolbar.wikipages.name;:" />
           </hbox>
             <hbox>
-            <textbox id="RmTb-Wikipage-AddEditName" flex="1"/>
+            <textbox id="RedmineToolbar-Wikipage-AddEditName" flex="1"/>
           </hbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.wikipages.add;" oncommand="RmTb_Wikipages.addOrEdit();" />
+            <button label="&redminetoolbar.wikipages.add;" oncommand="RedmineToolbar_Wikipages.addOrEdit();" />
           </hbox>
           <vbox flex="1">
-            <listbox id="RmTb-Wikipages-Pages" flex="1">
+            <listbox id="RedmineToolbar-Wikipages-Pages" flex="1">
               <listhead>
                 <listheader label="&redminetoolbar.wikipages.name;" />
               </listhead>
@@ -39,8 +39,8 @@
             </listbox> 
           </vbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.wikipages.remove;" oncommand="RmTb_Wikipages.remove();" />
-            <button label="&redminetoolbar.wikipages.removeall;" oncommand="RmTb_Wikipages.removeAll();" />
+            <button label="&redminetoolbar.wikipages.remove;" oncommand="RedmineToolbar_Wikipages.remove();" />
+            <button label="&redminetoolbar.wikipages.removeall;" oncommand="RedmineToolbar_Wikipages.removeAll();" />
           </hbox>
         </vbox>
 </dialog>

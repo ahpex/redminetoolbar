@@ -1,16 +1,16 @@
-var RmTb= {
+var RedmineToolbar= {
 
   urlExists : false,
 
   Init : function() {
     // Set the project title to be the current project title
-    RmTb.Change_Project_Label();
+    RedmineToolbar.Change_Project_Label();
   },
 
   Change_Project_Label : function() {
-    var projButton = document.getElementById('RmTb-Project-Button');
+    var projButton = document.getElementById('RedmineToolbar-Project-Button');
     if (projButton)
-       projButton.setAttribute('label', RmTb.getPref('currentproject'));
+       projButton.setAttribute('label', RedmineToolbar.getPref('currentproject'));
   },
 
   Exit : function() {
@@ -23,8 +23,8 @@ var RmTb= {
 
   loadPage : function(page) {
     var url = "";
-    var host = RmTb.getProjectUrl();
-    var currProj = RmTb.getPref('currentproject');
+    var host = RedmineToolbar.getProjectUrl();
+    var currProj = RedmineToolbar.getPref('currentproject');
     
     switch(page) {
       case 'MYPAGE':
@@ -57,7 +57,7 @@ var RmTb= {
       default:
         alert('No such page: ' + page);
     }
-    RmTb.loadUrl(url);
+    RedmineToolbar.loadUrl(url);
   },
 
   getFeed : function(url) {
@@ -66,7 +66,7 @@ var RmTb= {
     xhr.onreadystatechange = function() {
       if(xhr.readyState == 4) {
         if(xhr.status == 200) {
-          RmTb.Populate(xhr.responseXML);
+          RedmineToolbar.Populate(xhr.responseXML);
         }
       }
     }
@@ -74,14 +74,14 @@ var RmTb= {
   },
 
   PopulateActivities : function() {
-    var host = RmTb.getProjectUrl();
-    var currProj = RmTb.getPref('currentproject');
+    var host = RedmineToolbar.getProjectUrl();
+    var currProj = RedmineToolbar.getPref('currentproject');
     var url = host + "/projects/activity/" + currProj + "?format=atom";
-    if (RmTb.UrlExists(url)) {
-			RmTb.getFeed(url);
+    if (RedmineToolbar.UrlExists(url)) {
+			RedmineToolbar.getFeed(url);
 		} else {
 			url = host + "/projects/" + currProj + "/activity.atom";
-			RmTb.getFeed(url);
+			RedmineToolbar.getFeed(url);
 		}
   },
 
@@ -91,12 +91,12 @@ var RmTb= {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4) {
 			  if (xhr.status == 200) {
-					RmTb.urlExists = true;
+					RedmineToolbar.urlExists = true;
 				}
 			}
 		}
 		xhr.send(null);
-		return RmTb.urlExists;
+		return RedmineToolbar.urlExists;
 	},
 
   Populate : function(doc) {
@@ -104,7 +104,7 @@ var RmTb= {
     const MAXENTRIES = 30;
 
     // Get the menupopup element that we will be working with
-    var menu = document.getElementById("RmTb-Activity-Popup");
+    var menu = document.getElementById("RedmineToolbar-Activity-Popup");
 
     // Remove all exisiting items first, otherwise the newly created items
     // are appended to the list
@@ -129,20 +129,20 @@ var RmTb= {
       tempItem.setAttribute("label", title);
       
       // Add a menu icon
-      if (RmTb.StartsWith(title, "Wiki edit"))
-        tempItem.setAttribute("class", "RmTb-Activity-Wiki-Edit");
-      else if (RmTb.StartsWith(title, "Revision")) 
-        tempItem.setAttribute("class", "RmTb-Activity-Changeset");
-      else if (RmTb.StartsWith(title, "Feature")) 
-        tempItem.setAttribute("class", "RmTb-Activity-Feature");
-      else if (RmTb.StartsWith(title, "Patch")) 
-        tempItem.setAttribute("class", "RmTb-Activity-Patch");
+      if (RedmineToolbar.StartsWith(title, "Wiki edit"))
+        tempItem.setAttribute("class", "RedmineToolbar-Activity-Wiki-Edit");
+      else if (RedmineToolbar.StartsWith(title, "Revision")) 
+        tempItem.setAttribute("class", "RedmineToolbar-Activity-Changeset");
+      else if (RedmineToolbar.StartsWith(title, "Feature")) 
+        tempItem.setAttribute("class", "RedmineToolbar-Activity-Feature");
+      else if (RedmineToolbar.StartsWith(title, "Patch")) 
+        tempItem.setAttribute("class", "RedmineToolbar-Activity-Patch");
 
       // get the URL from the feed entry
       var url = entryItem.getElementsByTagName('link')[0].getAttribute('href');
 
       // Set the new menu item's action
-      tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + url + "');");
+      tempItem.setAttribute("oncommand", "RedmineToolbar.loadUrl('" + url + "');");
 
       // Add the item to out menu
       menu.appendChild(tempItem);
@@ -154,7 +154,7 @@ var RmTb= {
   },
 
   Wiki_Populate : function() {
-    var menu = document.getElementById("RmTb-Wiki-Popup");
+    var menu = document.getElementById("RedmineToolbar-Wiki-Popup");
 
     // Remove all exisiting items first, otherwise the newly created items
     // are appended to the list. Skip 
@@ -165,21 +165,21 @@ var RmTb= {
 
     var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                  .getService(Components.interfaces.nsIPrefService);
-    var branch = prefs.getBranch("extensions.redminetoolbar.project." + RmTb.getPref("currentproject") + ".wikipage.");
+    var branch = prefs.getBranch("extensions.redminetoolbar.project." + RedmineToolbar.getPref("currentproject") + ".wikipage.");
     var children = branch.getChildList("", {});
 
     for (var j=children.length -1; j >= 0; j--) {
-      var link = RmTb.getProjectUrl() + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+      var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
       var tempItem = document.createElement("menuitem");
       tempItem.setAttribute("label", branch.getCharPref(children[j]));
-      var link = RmTb.getProjectUrl() + '/wiki/' + RmTb.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
-      tempItem.setAttribute("oncommand", "RmTb.loadUrl('" + link + "');");
+      var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+      tempItem.setAttribute("oncommand", "RedmineToolbar.loadUrl('" + link + "');");
       menu.appendChild(tempItem);
     }
   },
 
   getProjectUrl : function() {
-    var currentProject = RmTb.getPref('currentproject');
+    var currentProject = RedmineToolbar.getPref('currentproject');
     var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                   .getService(Components.interfaces.nsIPrefService);
     var branch = prefs.getBranch("extensions.redminetoolbar.projects.name");
@@ -199,7 +199,7 @@ var RmTb= {
   },
 
   PopulateProjects : function() {
-    var menu = document.getElementById("RmTb-Project-Popup");
+    var menu = document.getElementById("RedmineToolbar-Project-Popup");
     
     var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                   .getService(Components.interfaces.nsIPrefService);
@@ -213,7 +213,7 @@ var RmTb= {
       var tempItem = document.createElement("menuitem");
       var projectName = branch.getCharPref(children[i]);
       tempItem.setAttribute("label", projectName);
-      tempItem.setAttribute("oncommand", "RmTb.Change_Project('" + projectName + "');");
+      tempItem.setAttribute("oncommand", "RedmineToolbar.Change_Project('" + projectName + "');");
       menu.appendChild(tempItem);
     }
   },
@@ -268,7 +268,7 @@ var redminePrefListener = new PrefListener("extensions.redminetoolbar.",
   function(branch, name) {
     switch (name) {
       case "currentproject":
-        RmTb.Change_Project_Label(); 
+        RedmineToolbar.Change_Project_Label(); 
         break;
     }
 });

@@ -3,12 +3,12 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://mozapps/skin/pref/pref.css" type="text/css"?>
 
-<dialog id="RmTb-Options-Dialog"
+<dialog id="RedmineToolbar-Options-Dialog"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         buttons="accept, cancel"
         orient="vertical"
-        ondialogaccept="RmTb_Options.save()"
-        onload="RmTb_Options.load()"
+        ondialogaccept="RedmineToolbar_Options.save()"
+        onload="RedmineToolbar_Options.load()"
         title="&redminetoolbar.options.window.title;"
         width="600"
         height="400">
@@ -21,7 +21,7 @@
     </tabs>
 
     <tabpanels flex="1">
-      <tabpanel id="RmTb-OptTab-General" orient="vertical">
+      <tabpanel id="RedmineToolbar-OptTab-General" orient="vertical">
         <vbox flex="1">
           <hbox>
             <grid flex="1">
@@ -31,21 +31,21 @@
               </columns>
               <rows>
                 <row>
-                  <label control="RmTb-Opt-AddEditName" value="&redminetoolbar.options.tabgeneral.projectname;" />
-                  <textbox id="RmTb-Opt-AddEditName" />
+                  <label control="RedmineToolbar-Opt-AddEditName" value="&redminetoolbar.options.tabgeneral.projectname;" />
+                  <textbox id="RedmineToolbar-Opt-AddEditName" />
                 </row>
                 <row>
-                  <label control="RmTb-Opt-AddEditUrl" value="&redminetoolbar.options.tabgeneral.projecturl;" />
-                  <textbox id="RmTb-Opt-AddEditUrl" />
+                  <label control="RedmineToolbar-Opt-AddEditUrl" value="&redminetoolbar.options.tabgeneral.projecturl;" />
+                  <textbox id="RedmineToolbar-Opt-AddEditUrl" />
                 </row>
               </rows>
             </grid>
           </hbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.options.tabgeneral.add;" oncommand="RmTb_Options.addOrEditProject();" />
+            <button label="&redminetoolbar.options.tabgeneral.add;" oncommand="RedmineToolbar_Options.addOrEditProject();" />
           </hbox>
           <vbox flex="1">
-            <listbox id="RmTb-Opt-Projects" flex="1">
+            <listbox id="RedmineToolbar-Opt-Projects" flex="1">
               <listhead>
                 <listheader label="&redminetoolbar.options.tabgeneral.projectname;" />
                 <listheader label="&redminetoolbar.options.tabgeneral.projecturl;" />
@@ -57,8 +57,8 @@
             </listbox> 
           </vbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.options.tabgeneral.remove;" oncommand="RmTb_Options.removeProject();" />
-            <button label="&redminetoolbar.options.tabgeneral.removeall;" oncommand="RmTb_Options.removeAllProjects();" />
+            <button label="&redminetoolbar.options.tabgeneral.remove;" oncommand="RedmineToolbar_Options.removeProject();" />
+            <button label="&redminetoolbar.options.tabgeneral.removeall;" oncommand="RedmineToolbar_Options.removeAllProjects();" />
           </hbox>
         </vbox>
       </tabpanel>

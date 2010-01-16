@@ -1,4 +1,4 @@
-var RmTb_Options = {
+var RedmineToolbar_Options = {
 
   load : function() {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -7,7 +7,7 @@ var RmTb_Options = {
     // List of projects
     var names = branch.getChildList("name.", {});
     for (var i = 0; i < names.length; i++) {
-      RmTb_Options.addToProjectList(
+      RedmineToolbar_Options.addToProjectList(
         branch.getCharPref("name." + i),
         branch.getCharPref("url." + i));
     }
@@ -22,7 +22,7 @@ var RmTb_Options = {
     branch.deleteBranch("projects.url");
 
     // and add them again
-    var projectList = document.getElementById("RmTb-Opt-Projects");
+    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
     var projects = projectList.getElementsByTagName("listitem");
     for (var i = 0; i < projects.length; i++) {
       var items = projects[i].childNodes;
@@ -32,11 +32,11 @@ var RmTb_Options = {
   },
 
   addOrEditProject : function() {
-    if (   document.getElementById("RmTb-Opt-AddEditName").value != ""
-        && document.getElementById("RmTb-Opt-AddEditUrl").value != "") {
-      RmTb_Options.addToProjectList(
-        document.getElementById("RmTb-Opt-AddEditName").value,
-        document.getElementById("RmTb-Opt-AddEditUrl").value); 
+    if (   document.getElementById("RedmineToolbar-Opt-AddEditName").value != ""
+        && document.getElementById("RedmineToolbar-Opt-AddEditUrl").value != "") {
+      RedmineToolbar_Options.addToProjectList(
+        document.getElementById("RedmineToolbar-Opt-AddEditName").value,
+        document.getElementById("RedmineToolbar-Opt-AddEditUrl").value); 
     }
   },
 
@@ -44,7 +44,7 @@ var RmTb_Options = {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"]
                                   .getService(Components.interfaces.nsIPrefService);
     const branch = prefService.getBranch("extensions.redminetoolbar.");
-    var projectList = document.getElementById("RmTb-Opt-Projects");
+    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
     var project = document.createElement("listitem");
     var pName = document.createElement("listcell");
     pName.setAttribute("label", name);
@@ -64,7 +64,7 @@ var RmTb_Options = {
                         "Do not ask me again", check);
 
     if (result) {
-      var projectList = document.getElementById("RmTb-Opt-Projects");
+      var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
       var elements = projectList.getElementsByTagName("listitem");
       for (var i = elements.length-1; i >= 0; i--) {
         elements[i].parentNode.removeChild(elements[i]); 
@@ -73,7 +73,7 @@ var RmTb_Options = {
   },
 
   removeProject : function() {
-    var projectList = document.getElementById("RmTb-Opt-Projects");
+    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
     var elements = projectList.getElementsByTagName("listitem");
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].hasAttribute("selected"))

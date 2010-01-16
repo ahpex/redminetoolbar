@@ -1,20 +1,20 @@
 @import url("chrome://global/skin/");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#RmTb-About-Details {
+#RedmineToolbar-About-Details {
   color: #000000 !important;
   padding: 0.5em !important;
 }
 
-.name {
+.RedmineToolbar-About-Name {
   font-size: x-large !important;
   padding-right: 0.25em !important;
 }
 
-.title {
+.RedmineToolbar-About-Title {
   padding-top: 0.25em !important;
 }
 
-.name, .title {
+.RedmineToolbar-About-Name, .RedmineToolbar-About-Title {
   font-weight: bold !important;
 }

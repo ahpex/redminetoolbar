@@ -3,18 +3,18 @@
 <?xml-stylesheet href="chrome://redminetoolbar/content/about.css" type="text/css"?>
 
 <dialog buttons="accept"
-        id="RmTb-About-Dialog"
+        id="RedmineToolbar-About-Dialog"
         title="&redminetoolbar.about.window.title;"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <vbox id="RmTb-About-Details">
+    <vbox id="RedmineToolbar-About-Details">
         <hbox>
-            <description class="name">Redmine Toolbar</description>
-            <description class="name">0.8</description>
+            <description class="RedmineToolbar-About-Name">Redmine Toolbar</description>
+            <description class="RedmineToolbar-About-Name">0.8</description>
         </hbox>
-        <description value="&redminetoolbar.about.author;" class="title"/>
+        <description value="&redminetoolbar.about.author;" class="RedmineToolbar-About-Title"/>
         <description>Michael Pietsch</description>
-        <description value="Homepage" class="title"/>
+        <description value="Homepage" class="RedmineToolbar-About-Title"/>
         <description>http://www.mpietsch.com/redminetoolbar</description>
     </vbox>
     <separator class="groove"/>
