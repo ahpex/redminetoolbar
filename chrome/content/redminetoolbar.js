@@ -2,7 +2,20 @@ var RedmineToolbar= {
 
   urlExists : false,
 
+  redmineToolbarPrefListener : null,
+  
   Init : function() {
+    // Initialize and register preferences listener
+    RedmineToolbar.redmineToolbarPrefListener = new RedmineToolbar.PrefListener("extensions.redminetoolbar.",
+      function(branch, name) {
+        switch (name) {
+          case "currentproject":
+            RedmineToolbar.Change_Project_Label(); 
+            break;
+        }
+    });
+    RedmineToolbar.redmineToolbarPrefListener.register();
+    
     // Set the project title to be the current project title
     RedmineToolbar.Change_Project_Label();
   },
@@ -238,38 +251,29 @@ var RedmineToolbar= {
   showAboutDialog : function() {
     var x = window.openDialog("chrome://redminetoolbar/content/about.xul",
       "Redmine Toolbar About", "centerscreen=yes,chrome=yes,modal=yes,resizable=yes");
-  }
-};
+  },
 
-function PrefListener(branchName, func) {
-  var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-                              .getService(Components.interfaces.nsIPrefService);
-  var branch = prefService.getBranch(branchName);
-  branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
+  PrefListener : function(branchName, func) {
+    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
+                                .getService(Components.interfaces.nsIPrefService);
+    var branch = prefService.getBranch(branchName);
+    branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
 
-  this.register = function() {
-    branch.addObserver("", this, false);
-    branch.getChildList("", { })
-          .forEach(function (name) { func(branch, name); });
-  };
-
-  this.unregister = function unregister() {
-    if (branch)
-      branch.removeObserver("", this);
-  };
-
-  this.observe = function(subject, topic, data) {
-    if (topic == "nsPref:changed")
-      func(branch, data);
+    this.register = function() {
+      branch.addObserver("", this, false);
+      branch.getChildList("", { })
+            .forEach(function (name) { func(branch, name); });
     };
-}
 
-var redminePrefListener = new PrefListener("extensions.redminetoolbar.",
-  function(branch, name) {
-    switch (name) {
-      case "currentproject":
-        RedmineToolbar.Change_Project_Label(); 
-        break;
-    }
-});
-redminePrefListener.register();
+    this.unregister = function unregister() {
+      if (branch)
+        branch.removeObserver("", this);
+    };
+
+    this.observe = function(subject, topic, data) {
+      if (topic == "nsPref:changed")
+        func(branch, data);
+      };
+  }
+
+}; // End of RedmineToolbar
