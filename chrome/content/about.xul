@@ -10,12 +10,12 @@
     <vbox id="RedmineToolbar-About-Details">
         <hbox>
             <description class="RedmineToolbar-About-Name">Redmine Toolbar</description>
-            <description class="RedmineToolbar-About-Name">0.8</description>
+            <description class="RedmineToolbar-About-Name">0.9.3</description>
         </hbox>
         <description value="&redminetoolbar.about.author;" class="RedmineToolbar-About-Title"/>
-        <description>Michael Pietsch</description>
+        <description>Joaquin Ayuso de Paul</description>
         <description value="Homepage" class="RedmineToolbar-About-Title"/>
-        <description>http://www.mpietsch.com/redminetoolbar</description>
+        <description>http://www.borderstylo.com/</description>
     </vbox>
     <separator class="groove"/>
 </dialog>

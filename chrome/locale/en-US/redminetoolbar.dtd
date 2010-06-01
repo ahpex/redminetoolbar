@@ -11,6 +11,12 @@
 <!ENTITY redminetoolbar.button.activity.label "Activities">
 <!ENTITY redminetoolbar.tooltip.activity "Go to the 'Activity' page">
 
+<!ENTITY redminetoolbar.button.news.label "News">
+<!ENTITY redminetoolbar.tooltip.news "Go to the 'News' page">
+
+<!ENTITY redminetoolbar.button.forums.label "Forums">
+<!ENTITY redminetoolbar.tooltip.forums "Go to the 'Forums' page">
+
 <!ENTITY redminetoolbar.button.issues.label "Issues">
 <!ENTITY redminetoolbar.tooltip.issues "Go to the 'Issues' page">
 
@@ -34,27 +40,33 @@
 <!ENTITY redminetoolbar.button.repository.label "Repository">
 <!ENTITY redminetoolbar.tooltip.repository "Go to the 'Repository' page">
 
+<!ENTITY redminetoolbar.button.search.label "Search">
+<!ENTITY redminetoolbar.tooltip.search "Search items in the Project">
+
 <!ENTITY redminetoolbar.button.options.label "Options">
 <!ENTITY redminetoolbar.tooltip.options "Show options">
 <!ENTITY redminetoolbar.button.about.label "About...">
 
 <!-- Options dialog -->
 <!ENTITY redminetoolbar.options.window.title "Redmine Toolbar Options">
-<!ENTITY redminetoolbar.options.tabgeneral.label "General">
+<!ENTITY redminetoolbar.options.tabenvironments.label "Environments">
+<!ENTITY redminetoolbar.options.tabpanel.label "Buttons">
 
 <!-- General options tab -->
-<!ENTITY redminetoolbar.options.tabgeneral.projectname "Name">
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "Environment">
 <!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
-<!ENTITY redminetoolbar.options.tabgeneral.add "Add">
-<!ENTITY redminetoolbar.options.tabgeneral.remove "Remove">
+<!ENTITY redminetoolbar.options.tabgeneral.add "Add Environment">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "Remove Environment">
 <!ENTITY redminetoolbar.options.tabgeneral.removeall "Remove all">
+<!ENTITY redminetoolbar.options.tabgeneral.savebuttons "Save Configuration">
 
 <!-- Wikipages dialog -->
 <!ENTITY redminetoolbar.wikipages.window.title "Redmine Toolbar Wiki Pages">
-<!ENTITY redminetoolbar.wikipages.help "Enter the name of the wiki page exactly as given in the wiki (CamelCase).">
+<!ENTITY redminetoolbar.wikipages.help "Enter the name of the wiki page exactly as given in the wiki.">
+<!ENTITY redminetoolbar.wikipages.helptitle "Important:">
 <!ENTITY redminetoolbar.wikipages.name "Name">
-<!ENTITY redminetoolbar.wikipages.add "Add">
-<!ENTITY redminetoolbar.wikipages.remove "Remove">
+<!ENTITY redminetoolbar.wikipages.add "Add Wiki Page">
+<!ENTITY redminetoolbar.wikipages.remove "Remove Wiki Page">
 <!ENTITY redminetoolbar.wikipages.removeall "Remove all">
 
 <!-- About dialog -->

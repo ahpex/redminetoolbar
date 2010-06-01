@@ -16,12 +16,31 @@
   <script type="application/x-javascript" src="chrome://redminetoolbar/content/options.js" />
 
   <tabbox flex="1">
-    <tabs>
-      <tab label="&redminetoolbar.options.tabgeneral.label;" />
+    <tabs> 
+      <tab label="&redminetoolbar.options.tabpanel.label;" />
+      <tab label="&redminetoolbar.options.tabenvironments.label;" />
     </tabs>
 
     <tabpanels flex="1">
-      <tabpanel id="RedmineToolbar-OptTab-General" orient="vertical">
+      <tabpanel id="RedmineToolbar-OptTab-Panel" orient="vertical">
+        <vbox flex="1">
+          <checkbox id="Options-Buttons-News" label="News" checked="true"/>
+          <checkbox id="Options-Buttons-Forums" label="Forums" checked="true"/>
+          <checkbox id="Options-Buttons-Activities" label="Activities" checked="true"/>
+          <checkbox id="Options-Buttons-Issues" label="Issues" checked="true"/>
+          <checkbox id="Options-Buttons-NewIssue" label="New Issue" checked="true"/>
+          <checkbox id="Options-Buttons-Wiki" label="Wiki" checked="true"/>
+          <checkbox id="Options-Buttons-Repository" label="Repository" checked="true"/>
+          <checkbox id="Options-Buttons-Overview" label="Overview" checked="false"/>
+          <checkbox id="Options-Buttons-Files" label="Files" checked="false"/>
+          <checkbox id="Options-Buttons-Documents" label="Documents" checked="false"/>
+          <checkbox id="Options-Buttons-Roadmap" label="Roadmap" checked="false"/>
+        </vbox>
+        <hbox pack="end">
+          <button label="&redminetoolbar.options.tabgeneral.savebuttons;" oncommand="RedmineToolbar_Options.saveButtons();" />
+        </hbox>
+      </tabpanel>
+      <tabpanel id="RedmineToolbar-OptTab-Environments" orient="vertical">
         <vbox flex="1">
           <hbox>
             <grid flex="1">
@@ -42,10 +61,10 @@
             </grid>
           </hbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.options.tabgeneral.add;" oncommand="RedmineToolbar_Options.addOrEditProject();" />
+            <button label="&redminetoolbar.options.tabgeneral.add;" oncommand="RedmineToolbar_Options.addOrEditEnvironment();" />
           </hbox>
           <vbox flex="1">
-            <listbox id="RedmineToolbar-Opt-Projects" flex="1">
+            <listbox id="RedmineToolbar-Opt-Environments" flex="1">
               <listhead>
                 <listheader label="&redminetoolbar.options.tabgeneral.projectname;" />
                 <listheader label="&redminetoolbar.options.tabgeneral.projecturl;" />
@@ -57,8 +76,8 @@
             </listbox> 
           </vbox>
           <hbox pack="end">
-            <button label="&redminetoolbar.options.tabgeneral.remove;" oncommand="RedmineToolbar_Options.removeProject();" />
-            <button label="&redminetoolbar.options.tabgeneral.removeall;" oncommand="RedmineToolbar_Options.removeAllProjects();" />
+            <button label="&redminetoolbar.options.tabgeneral.remove;" oncommand="RedmineToolbar_Options.removeEnvironment();" />
+            <button label="&redminetoolbar.options.tabgeneral.removeall;" oncommand="RedmineToolbar_Options.removeAllEnvironments();" />
           </hbox>
         </vbox>
       </tabpanel>

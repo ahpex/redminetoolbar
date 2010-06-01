@@ -17,16 +17,13 @@
 
         <vbox flex="1">
           <hbox>
-            <label value="&redminetoolbar.wikipages.help;" />
+            <label control="RedmineToolbar-Wikipage-AddEditName" value="&redminetoolbar.wikipages.name;:" />
+            <textbox id="RedmineToolbar-Wikipage-AddEditName" flex="1"/>
+            <button label="&redminetoolbar.wikipages.add;" oncommand="RedmineToolbar_Wikipages.addOrEdit();" />
           </hbox>
           <hbox>
-            <label control="RedmineToolbar-Wikipage-AddEditName" value="&redminetoolbar.wikipages.name;:" />
-          </hbox>
-            <hbox>
-            <textbox id="RedmineToolbar-Wikipage-AddEditName" flex="1"/>
-          </hbox>
-          <hbox pack="end">
-            <button label="&redminetoolbar.wikipages.add;" oncommand="RedmineToolbar_Wikipages.addOrEdit();" />
+            <label value="&redminetoolbar.wikipages.helptitle;" />
+            <label value="&redminetoolbar.wikipages.help;" />
           </hbox>
           <vbox flex="1">
             <listbox id="RedmineToolbar-Wikipages-Pages" flex="1">

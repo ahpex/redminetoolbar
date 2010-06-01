@@ -14,18 +14,34 @@
     <toolbar id="RedmineToolbar-Toolbar" toolbarname="Redmine Toolbar" accesskey="T"
              class="chromeclass-toolbar" context="toolbar-context-menu" 
              hidden="false" persist="hidden">
-      <toolbarbutton id="RedmineToolbar-Project-Button" tooltiptext="Project Name"
+      <toolbarbutton id="RedmineToolbar-Environment-Button" tooltiptext="Environment"
                      label="&redminetoolbar.button.project.label;" type="menu">
-        <menupopup id="RedmineToolbar-Project-Popup" onpopupshowing="RedmineToolbar.PopulateProjects();">
+        <menupopup id="RedmineToolbar-Environment-Popup" onpopupshowing="RedmineToolbar.PopulateEnvironments();">
           <menuitem label="&redminetoolbar.button.loading.label;" />
         </menupopup>
       </toolbarbutton>
+      <toolbarbutton id="RedmineToolbar-Project-Button" tooltiptext="Project Name"
+                     label="&redminetoolbar.button.project.label;" type="menu">
+        <menupopup id="RedmineToolbar-Projects-Popup" onpopupshowing="RedmineToolbar.PopulateProjects();">
+          <menuitem label="&redminetoolbar.button.loading.label;" />
+        </menupopup>
+      </toolbarbutton>
+
       <toolbarseparator />
-      <toolbarbutton id="RedmineToolbar-MyPage-Button" tooltiptext="&redminetoolbar.tooltip.mypage;"
-                     label="&redminetoolbar.button.mypage.label;" oncommand="RedmineToolbar.loadPage('MYPAGE');" />
-      <toolbarseparator />
-      <toolbarbutton id="RedmineToolbar-Overview-Button" tooltiptext="&redminetoolbar.tooltip.overview;"
-                     label="&redminetoolbar.button.overview.label;" oncommand="RedmineToolbar.loadPage('OVERVIEW');" />
+
+      <toolbarbutton id="RedmineToolbar-News-Button" tooltiptext="&redminetoolbar.tooltip.news;"
+                     label="&redminetoolbar.button.news.label;" type="menu">
+        <menupopup id="RedmineToolbar-News-Popup" onpopupshowing="RedmineToolbar.PopulateNews();">
+          <!-- menuitems are automatically generated -->
+        </menupopup>
+      </toolbarbutton>
+      <toolbarbutton id="RedmineToolbar-Forums-Button" tooltiptext="&redminetoolbar.tooltip.forums;"
+                     label="&redminetoolbar.button.forums.label;" type="menu">
+        <menupopup id="RedmineToolbar-Forums-Popup" onpopupshowing="RedmineToolbar.PopulateForums();">
+          <!-- menuitems are automatically generated -->
+        </menupopup>
+      </toolbarbutton>
+
       <toolbarbutton id="RedmineToolbar-Activity-Button" tooltiptext="&redminetoolbar.tooltip.activity;"
                      label="&redminetoolbar.button.activity.label;" type="menu">
         <menupopup id="RedmineToolbar-Activity-Popup" onpopupshowing="RedmineToolbar.PopulateActivities();">
@@ -33,34 +49,48 @@
         </menupopup>
       </toolbarbutton>
       <toolbarbutton id="RedmineToolbar-Issues-Button" tooltiptext="&redminetoolbar.tooltip.issues;"
-                     label="&redminetoolbar.button.issues.label;" oncommand="RedmineToolbar.loadPage('ISSUES');" />
+                     label="&redminetoolbar.button.issues.label;" type="menu">
+        <menupopup id="RedmineToolbar-Issues-Popup" onpopupshowing="RedmineToolbar.PopulateIssues();">
+          <!-- menuitems are automatically generated -->
+        </menupopup>
+      </toolbarbutton>
       <toolbarbutton id="RedmineToolbar-NewIssue-Button" tooltiptext="&redminetoolbar.tooltip.newissue;"
-                     label="&redminetoolbar.button.newissue.label;" oncommand="RedmineToolbar.loadPage('NEWISSUE');" />
-      <toolbarbutton id="RedmineToolbar-News-Button" tooltiptext="&redminetoolbar.tooltip.news;"
-                     label="&redminetoolbar.button.news.label;" oncommand="RedmineToolbar.loadPage('NEWS');" />
-      <toolbarbutton id="RedmineToolbar-Docs-Button" tooltiptext="&redminetoolbar.tooltip.docs;"
-                     label="&redminetoolbar.button.docs.label;" oncommand="RedmineToolbar.loadPage('DOCS');" />
+                     label="&redminetoolbar.button.newissue.label;" oncommand="RedmineToolbar.loadPage('NEWISSUE','');" />
       <toolbarbutton id="RedmineToolbar-Wiki-Button" tooltiptext="&redminetoolbar.tooltip.wiki;"
                      label="&redminetoolbar.button.wiki.label;" type="menu">
         <menupopup id="RedmineToolbar-Wiki-Popup" onpopupshowing="RedmineToolbar.Wiki_Populate();">
           <!-- menuitems are automatically generated -->
-          <menuitem label="&redminetoolbar.button.wikimainpage.label;" oncommand="RedmineToolbar.loadPage('WIKI');" /> 
-          <menuitem label="&redminetoolbar.button.wikiaddpage.label;" oncommand="RedmineToolbar.showWikipagesDialog();" /> 
+          <menuitem label="&redminetoolbar.button.wikimainpage.label;" class="RedmineToolbar-Wiki-Home" oncommand="RedmineToolbar.loadPage('WIKI','');" /> 
+          <menuitem label="&redminetoolbar.button.wikiaddpage.label;" class="RedmineToolbar-Wiki-Edit" oncommand="RedmineToolbar.showWikipagesDialog();" /> 
             <menuseparator /> 
             <menuitem label="&redminetoolbar.button.loading.label;" />
           </menupopup>
       </toolbarbutton>  
-      <toolbarbutton id="RedmineToolbar-Files-Button" tooltiptext="&redminetoolbar.tooltip.files;"
-                     label="&redminetoolbar.button.files.label;" oncommand="RedmineToolbar.loadPage('FILES');" />
       <toolbarbutton id="RedmineToolbar-Repository-Button" tooltiptext="&redminetoolbar.tooltip.repository;"
-                     label="&redminetoolbar.button.repository.label;" oncommand="RedmineToolbar.loadPage('REPOSITORY');" />
+                     label="&redminetoolbar.button.repository.label;" type="menu">
+        <menupopup id="RedmineToolbar-Revisions-Popup" onpopupshowing="RedmineToolbar.PopulateRevisions();">
+          <!-- menuitems are automatically generated -->
+        </menupopup>
+      </toolbarbutton>
       <toolbarspring />
+      <toolbaritem id="RedmineToolbar-Search-Box" persist="width">
+        <menulist id="RedmineToolbar-Search-MenuList" value="Search" editable="true" flex="1" 
+                  minwidth="100" 
+                  width="250"
+                  onkeypress="RedmineToolbar.searchListener(event)"
+                  onclick="if(this.value == 'Search') { this.value = ''; }"
+                  onblur="if(this.value == '') { this.value = 'Search'; }">
+        </menulist>
+      </toolbaritem>
+      <toolbarbutton id="RedmineToolbar-Search-Button" tooltiptext="&redminetoolbar.tooltip.search;"
+                     label="&redminetoolbar.button.search.label;" oncommand="RedmineToolbar.Search();" />
+      <toolbarseparator />
       <toolbarbutton id="RedmineToolbar-Options-Button" tooltiptext="&redminetoolbar.tooltip.options;"
                      label="&redminetoolbar.button.options.label;" type="menu">
         <menupopup id="RedmineToolbar-Options-Popup">
-          <menuitem label="&redminetoolbar.button.options.label;" oncommand="RedmineToolbar.showOptions();" /> 
+          <menuitem label="&redminetoolbar.button.options.label;" class="RedmineToolbar-Options-Environment" oncommand="RedmineToolbar.showOptions();" /> 
           <menuseparator /> 
-          <menuitem label="&redminetoolbar.button.about.label;" oncommand="RedmineToolbar.showAboutDialog();" />
+          <menuitem label="&redminetoolbar.button.about.label;" class="RedmineToolbar-Options-About" oncommand="RedmineToolbar.showAboutDialog();" />
         </menupopup>
      </toolbarbutton>
    </toolbar>

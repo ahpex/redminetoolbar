@@ -23,6 +23,9 @@
   list-style-image: url("chrome://redminetoolbar/skin/page_white_word.png");
 }
 #RedmineToolbar-Wiki-Button {
+  list-style-image: url("chrome://redminetoolbar/skin/folder_edit.png");
+}
+#RedmineToolbar-Forums-Button {
   list-style-image: url("chrome://redminetoolbar/skin/user_comment.png");
 }
 #RedmineToolbar-Files-Button {
@@ -34,6 +37,9 @@
 #RedmineToolbar-Options-Button {
   list-style-image: url("chrome://redminetoolbar/skin/wrench.png");
 }
+#RedmineToolbar-Search-Button {
+  list-style-image: url("chrome://redminetoolbar/skin/magnifier.png");
+}
 .RedmineToolbar-Activity-Wiki-Edit {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/wiki_edit.png");
@@ -42,6 +48,11 @@
 .RedmineToolbar-Activity-Changeset {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/changeset.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Activity-Document {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/page_white_word.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
 .RedmineToolbar-Activity-Feature {
@@ -54,3 +65,99 @@
   list-style-image: url("chrome://redminetoolbar/skin/ticket_checked.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
+.RedmineToolbar-Issue-Bug {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/bug.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Bug-Fixed {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/bug_fixed.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Goto {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/bug_go.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Task {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/ticket.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Task-Fixed {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/ticket_checked.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Task-Closed {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/ticket_closed.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Feature {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/ticket.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Issue-Support {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/user_comment.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Project-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/brick.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-News-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/rss.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Environment-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/world.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Repository-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/database_refresh.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Forums-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/user_gray.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Wiki-Page {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/wiki_edit.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Wiki-Home {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/house.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Wiki-Edit {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/wrench.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Options-Environment {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/world.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Options-About {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/user_comment.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+.RedmineToolbar-Activity-MenuItem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
+  list-style-image: url("chrome://redminetoolbar/skin/sport_soccer.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+

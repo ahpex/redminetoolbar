@@ -2,12 +2,12 @@ var RedmineToolbar_Options = {
 
   load : function() {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    const branch = prefService.getBranch("extensions.redminetoolbar.projects.");
+    const branch = prefService.getBranch("extensions.redminetoolbar.environments.");
 
-    // List of projects
+    // List of environemnts
     var names = branch.getChildList("name.", {});
     for (var i = 0; i < names.length; i++) {
-      RedmineToolbar_Options.addToProjectList(
+      RedmineToolbar_Options.addToEnvironmentList(
         branch.getCharPref("name." + i),
         branch.getCharPref("url." + i));
     }
@@ -17,64 +17,64 @@ var RedmineToolbar_Options = {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     const branch = prefService.getBranch("extensions.redminetoolbar.");
  
-    // Remove all projects first ...  
-    branch.deleteBranch("projects.name");
-    branch.deleteBranch("projects.url");
+    // Remove all environments first ...  
+    branch.deleteBranch("environments.name");
+    branch.deleteBranch("environments.url");
 
     // and add them again
-    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
-    var projects = projectList.getElementsByTagName("listitem");
-    for (var i = 0; i < projects.length; i++) {
-      var items = projects[i].childNodes;
-      branch.setCharPref("projects.name." + i, items[0].getAttribute("label"));
-      branch.setCharPref("projects.url." + i, items[1].getAttribute("label"));
+    var environmentList = document.getElementById("RedmineToolbar-Opt-Environments");
+    var environments = environmentList.getElementsByTagName("listitem");
+    for (var i = 0; i < environments.length; i++) {
+      var items = environments[i].childNodes;
+      branch.setCharPref("environments.name." + i, items[0].getAttribute("label"));
+      branch.setCharPref("environments.url." + i, items[1].getAttribute("label"));
     }
   },
 
-  addOrEditProject : function() {
+  addOrEditEnvironment : function() {
     if (   document.getElementById("RedmineToolbar-Opt-AddEditName").value != ""
         && document.getElementById("RedmineToolbar-Opt-AddEditUrl").value != "") {
-      RedmineToolbar_Options.addToProjectList(
+      RedmineToolbar_Options.addToEnvironmentList(
         document.getElementById("RedmineToolbar-Opt-AddEditName").value,
         document.getElementById("RedmineToolbar-Opt-AddEditUrl").value); 
     }
   },
 
-  addToProjectList : function(name, url) {
+  addToEnvironmentList : function(name, url) {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"]
                                   .getService(Components.interfaces.nsIPrefService);
     const branch = prefService.getBranch("extensions.redminetoolbar.");
-    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
-    var project = document.createElement("listitem");
+    var environmentList = document.getElementById("RedmineToolbar-Opt-Environments");
+    var environment = document.createElement("listitem");
     var pName = document.createElement("listcell");
     pName.setAttribute("label", name);
     var pUrl  = document.createElement("listcell");
     pUrl.setAttribute("label", url);
-    project.appendChild(pName);
-    project.appendChild(pUrl);
-    projectList.appendChild(project);
+    environment.appendChild(pName);
+    environment.appendChild(pUrl);
+    environmentList.appendChild(environment);
   },
 
-  removeAllProjects : function() {
+  removeAllEnvironments : function() {
     var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                             .getService(Components.interfaces.nsIPromptService);
     var check = {value: false};
     var result = prompts.confirmCheck(window, "Redmine Toolbar", 
-                        "Do you really want to remove all projects?",
+                        "Do you really want to remove all Environments?",
                         "Do not ask me again", check);
 
     if (result) {
-      var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
-      var elements = projectList.getElementsByTagName("listitem");
+      var environmentList = document.getElementById("RedmineToolbar-Opt-Environments");
+      var elements = environmentList.getElementsByTagName("listitem");
       for (var i = elements.length-1; i >= 0; i--) {
         elements[i].parentNode.removeChild(elements[i]); 
       }
     }
   },
 
-  removeProject : function() {
-    var projectList = document.getElementById("RedmineToolbar-Opt-Projects");
-    var elements = projectList.getElementsByTagName("listitem");
+  removeEnvironment : function() {
+    var environmentList = document.getElementById("RedmineToolbar-Opt-Environments");
+    var elements = environmentList.getElementsByTagName("listitem");
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].hasAttribute("selected"))
         elements[i].parentNode.removeChild(elements[i]); 

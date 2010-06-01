@@ -2,8 +2,8 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>redminetoolbar@mpietsch.com</em:id>
-    <em:version>0.8</em:version>
+    <em:id>redminetoolbar@borderstylo.com</em:id>
+    <em:version>0.9.3</em:version>
     <em:type>2</em:type>
     <em:targetApplication>
       <Description>
@@ -14,8 +14,8 @@
     </em:targetApplication>
     <em:name>Redmine Toolbar</em:name>
     <em:description>Toolbar for easy access to Redmine projects.</em:description>
-    <em:creator>Michael Pietsch</em:creator>
-    <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+    <em:creator>Joaquin Ayuso</em:creator>
+    <em:homepageURL>http://www.borderstylo.com/</em:homepageURL>
     <em:aboutURL>chrome://redminetoolbar/content/about.xul</em:aboutURL>
     <em:optionsURL>chrome://redminetoolbar/content/options.xul</em:optionsURL>
     <em:iconURL>chrome://redminetoolbar/skin/redmine_icon.png</em:iconURL>
