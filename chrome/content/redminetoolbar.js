@@ -274,6 +274,15 @@ var RedmineToolbar= {
       if (topic == "nsPref:changed")
         func(branch, data);
       };
+  },
+
+  jumpToTicket : function(event) {
+    if (event.keyCode == 13) {
+        var host = RedmineToolbar.getProjectUrl();
+        var currProj = RedmineToolbar.getPref('currentproject');
+        url = host + "/projects/" + currProj + "/issues/" + document.getElementById("RedmineToolbar-JumpToTicket-Textbox").value;
+        RedmineToolbar.loadUrl(url);
+    }
   }
 
 }; // End of RedmineToolbar

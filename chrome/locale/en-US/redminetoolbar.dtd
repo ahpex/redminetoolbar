@@ -38,6 +38,8 @@
 <!ENTITY redminetoolbar.tooltip.options "Show options">
 <!ENTITY redminetoolbar.button.about.label "About...">
 
+<!ENTITY redminetoolbar.textbox.jumptoticket.label "Ticket:">
+
 <!-- Options dialog -->
 <!ENTITY redminetoolbar.options.window.title "Redmine Toolbar Options">
 <!ENTITY redminetoolbar.options.tabgeneral.label "General">
