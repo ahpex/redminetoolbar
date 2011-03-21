@@ -1,0 +1,64 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "Ninguno">
+<!ENTITY redminetoolbar.button.loading.label "Cargando...">
+
+<!ENTITY redminetoolbar.button.mypage.label "Mi página">
+<!ENTITY redminetoolbar.tooltip.mypage "Ir a página 'Mi página'">
+
+<!ENTITY redminetoolbar.button.overview.label "Vistazo">
+<!ENTITY redminetoolbar.tooltip.overview "Ir a página 'Vistazo'">
+
+<!ENTITY redminetoolbar.button.activity.label "Actividad">
+<!ENTITY redminetoolbar.tooltip.activity "Ir a la página 'Actividad'">
+
+<!ENTITY redminetoolbar.button.issues.label "Peticiones">
+<!ENTITY redminetoolbar.tooltip.issues "Ir a la página 'Peticiones'">
+
+<!ENTITY redminetoolbar.button.newissue.label "Nueva Petición">
+<!ENTITY redminetoolbar.tooltip.newissue "Ir a la página 'Nueva Petición'">
+
+<!ENTITY redminetoolbar.button.news.label "Noticias">
+<!ENTITY redminetoolbar.tooltip.news "Ir a la página 'Noticias'">
+
+<!ENTITY redminetoolbar.button.docs.label "Documentos">
+<!ENTITY redminetoolbar.tooltip.docs "Ir a la página 'Documentos'">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "Ir a la página 'Wiki'">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Página principal de Wiki">
+<!ENTITY redminetoolbar.button.wikiaddpage.label "Editar páginas Wiki">
+
+<!ENTITY redminetoolbar.button.files.label "Archivos">
+<!ENTITY redminetoolbar.tooltip.files "Ir a la página 'Archivos'">
+
+<!ENTITY redminetoolbar.button.repository.label "Repositorio">
+<!ENTITY redminetoolbar.tooltip.repository "Ir a la página 'Repositorio'">
+
+<!ENTITY redminetoolbar.button.options.label "Opciones">
+<!ENTITY redminetoolbar.tooltip.options "Mostrar opciones">
+<!ENTITY redminetoolbar.button.about.label "Acerca de...">
+
+<!ENTITY redminetoolbar.textbox.jumptoticket.label "Ticket:">
+
+<!-- Opciones dialog -->
+<!ENTITY redminetoolbar.options.window.title "Opciones de la barra Redmine">
+<!ENTITY redminetoolbar.options.tabgeneral.label "General">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "Nombre">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
+<!ENTITY redminetoolbar.options.tabgeneral.add "Agregar">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "Borrar">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "Borrar todo">
+
+<!-- Wikipages dialog -->
+<!ENTITY redminetoolbar.wikipages.window.title "Redmine Toolbar Wiki Pages">
+<!ENTITY redminetoolbar.wikipages.help "Enter the name of the wiki page exactly as given in the wiki (CamelCase).">
+<!ENTITY redminetoolbar.wikipages.name "Nombre">
+<!ENTITY redminetoolbar.wikipages.add "Agregar">
+<!ENTITY redminetoolbar.wikipages.remove "Borrar">
+<!ENTITY redminetoolbar.wikipages.removeall "Borrar todo">
+
+<!-- About dialog -->
+<!ENTITY redminetoolbar.about.window.title "Acerca de la barra Redmine">
+<!ENTITY redminetoolbar.about.author "Autor">
