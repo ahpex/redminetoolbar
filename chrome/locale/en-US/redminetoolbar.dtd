@@ -62,3 +62,5 @@
 <!-- About dialog -->
 <!ENTITY redminetoolbar.about.window.title "About Redmine Toolbar">
 <!ENTITY redminetoolbar.about.author "Author">
+<!ENTITY redminetoolbar.about.contributors "Contributors">
+<!ENTITY redminetoolbar.about.spanishtranslation "Spanish translation">
