@@ -53,6 +53,7 @@ var RedmineToolbar= {
 
   loadPage : function(page) {
     var url = "";
+    var urlOld = "";
     var host = RedmineToolbar.getProjectUrl();
     var currProj = RedmineToolbar.getPref('currentproject');
     
@@ -61,7 +62,8 @@ var RedmineToolbar= {
         url = host + "/my/page";
         break;
       case 'OVERVIEW':
-        url = host + "/projects/show/" + currProj + "";
+        url = host + "/projects/" + currProj;
+        urlOld = host + "/projects/show/" + currProj;
         break;
       case 'ISSUES':
         url = host + "/projects/" + currProj + "/issues";
@@ -76,18 +78,25 @@ var RedmineToolbar= {
         url = host + "/projects/" + currProj + "/documents";
         break;
       case 'WIKI':
-        url = host + "/wiki/" + currProj + "";
+        url= host + "/projects/" + currProj + "/wiki";
+        urlOld = host + "/wiki/" + currProj;
         break;
       case 'FILES':
-        url = host + "/projects/list_files/" + currProj + "";
+        url = host + "/projects/" + currProj + "/files";
+        urlOld = host + "/projects/list_files/" + currProj;
         break;
       case 'REPOSITORY':
-        url = host + "/repositories/show/" + currProj + "";
+        url = host + "/projects/" + currProj + "/repository";
+        urlOld = host + "/repositories/show/" + currProj;
         break;
       default:
         alert('No such page: ' + page);
     }
-    RedmineToolbar.loadUrl(url);
+    if (RedmineToolbar.UrlExists(url)) {
+        RedmineToolbar.loadUrl(url);
+    } else if (RedmineToolbar.UrlExists(urlOld)) {
+        RedmineToolbar.loadUrl(urlOld);
+    }
   },
 
   getFeed : function(url) {
