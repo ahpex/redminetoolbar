@@ -47,7 +47,7 @@ var RedmineToolbar= {
   },
 
   loadUrl : function(url) {
-    window._content.document.location = url;
+    window._content.document.location = encodeURI(url);
     window.content.focus();
   },
 
@@ -302,11 +302,30 @@ var RedmineToolbar= {
       };
   },
 
-  jumpToTicket : function(event) {
+  search : function(event) {
     if (event.keyCode == 13) {
         var host = RedmineToolbar.getProjectUrl();
         var currProj = RedmineToolbar.getPref('currentproject');
-        url = host + "/projects/" + currProj + "/issues/" + document.getElementById("RedmineToolbar-JumpToTicket-Textbox").value;
+        url = host + "/search/index/" + currProj + "?q=" + document.getElementById("RedmineToolbar-Search-Textbox").value + "&submit=Submit";
+
+        // Search what
+        if (document.getElementById("RedmineToolbar-Search-What-AllWords").getAttribute("checked") == "true")
+           url += "&all_words=1";
+        if (document.getElementById("RedmineToolbar-Search-What-TitlesOnly").getAttribute("checked") == "true")
+           url += "&titles_only=1";
+
+        // Search conditions
+        if (document.getElementById("RedmineToolbar-Search-Condition-Wikipages").getAttribute("checked") == "true")
+           url += "&wiki_pages=1";
+        if (document.getElementById("RedmineToolbar-Search-Condition-Issues").getAttribute("checked") == "true")
+           url += "&issues=1";
+        if (document.getElementById("RedmineToolbar-Search-Condition-Changesets").getAttribute("checked") == "true")
+           url += "&changesets=1";
+        if (document.getElementById("RedmineToolbar-Search-Condition-Messages").getAttribute("checked") == "true")
+           url += "&messages=1";
+        if (document.getElementById("RedmineToolbar-Search-Condition-News").getAttribute("checked") == "true")
+           url += "&news=1";
+
         RedmineToolbar.loadUrl(url);
     }
   }

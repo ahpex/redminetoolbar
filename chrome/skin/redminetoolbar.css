@@ -34,6 +34,9 @@
 #RedmineToolbar-Options-Button {
   list-style-image: url("chrome://redminetoolbar/skin/wrench.png");
 }
+#RedmineToolbar-Search-Button {
+  list-style-image: url("chrome://redminetoolbar/skin/magnifier.png");
+}
 .RedmineToolbar-Activity-Wiki-Edit {
   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic");
   list-style-image: url("chrome://redminetoolbar/skin/wiki_edit.png");

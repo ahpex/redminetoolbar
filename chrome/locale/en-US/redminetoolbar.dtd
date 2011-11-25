@@ -38,8 +38,6 @@
 <!ENTITY redminetoolbar.tooltip.options "Show options">
 <!ENTITY redminetoolbar.button.about.label "About...">
 
-<!ENTITY redminetoolbar.textbox.jumptoticket.label "Ticket:">
-
 <!-- Options dialog -->
 <!ENTITY redminetoolbar.options.window.title "Redmine Toolbar Options">
 <!ENTITY redminetoolbar.options.tabgeneral.label "General">
@@ -64,3 +62,12 @@
 <!ENTITY redminetoolbar.about.author "Author">
 <!ENTITY redminetoolbar.about.contributors "Contributors">
 <!ENTITY redminetoolbar.about.spanishtranslation "Spanish translation">
+
+<!-- Search -->
+<!ENTITY redminetoolbar.button.searchwhat.allwords.label "All words">
+<!ENTITY redminetoolbar.button.searchwhat.titlesonly.label "Titles only">
+<!ENTITY redminetoolbar.button.searchcondition.wikipages.label "Wiki pages">
+<!ENTITY redminetoolbar.button.searchcondition.issues.label "Issues">
+<!ENTITY redminetoolbar.button.searchcondition.news.label "News">
+<!ENTITY redminetoolbar.button.searchcondition.changesets.label "Changesets">
+<!ENTITY redminetoolbar.button.searchcondition.messages.label "Messages">

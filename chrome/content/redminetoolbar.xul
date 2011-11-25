@@ -55,10 +55,19 @@
       <toolbarbutton id="RedmineToolbar-Repository-Button" tooltiptext="&redminetoolbar.tooltip.repository;"
                      label="&redminetoolbar.button.repository.label;" oncommand="RedmineToolbar.loadPage('REPOSITORY');" />
       <toolbarseparator />
-      <hbox pack="center" align="baseline">
-        <label control="RedmineToolbar-JumpToTicket-Textbox" value="&redminetoolbar.textbox.jumptoticket.label;"/>
-        <textbox id="RedmineToolbar-JumpToTicket-Textbox" size="6" value="" onkeypress="RedmineToolbar.jumpToTicket(event);"/>
-      </hbox>
+      <textbox id="RedmineToolbar-Search-Textbox" flex="1" value="" onkeypress="RedmineToolbar.search(event);"/>
+      <toolbarbutton id="RedmineToolbar-Search-Button" type="menu">
+        <menupopup id="RedmineToolbar-Search-Popup">
+          <menuitem id="RedmineToolbar-Search-What-AllWords" label="&redminetoolbar.button.searchwhat.allwords.label;" type="checkbox" checked="true" /> 
+          <menuitem id="RedmineToolbar-Search-What-TitlesOnly" label="&redminetoolbar.button.searchwhat.titlesonly.label;" type="checkbox" /> 
+          <menuseparator /> 
+          <menuitem id="RedmineToolbar-Search-Condition-Wikipages" label="&redminetoolbar.button.searchcondition.wikipages.label;" type="checkbox" checked="true" /> 
+          <menuitem id="RedmineToolbar-Search-Condition-Issues" label="&redminetoolbar.button.searchcondition.issues.label;" type="checkbox" /> 
+          <menuitem id="RedmineToolbar-Search-Condition-News" label="&redminetoolbar.button.searchcondition.news.label;" type="checkbox" /> 
+          <menuitem id="RedmineToolbar-Search-Condition-Changesets" label="&redminetoolbar.button.searchcondition.changesets.label;" type="checkbox" /> 
+          <menuitem id="RedmineToolbar-Search-Condition-Messages" label="&redminetoolbar.button.searchcondition.messages.label;" type="checkbox" /> 
+        </menupopup>
+      </toolbarbutton>
       <toolbarspring />
       <toolbarbutton id="RedmineToolbar-Options-Button" tooltiptext="&redminetoolbar.tooltip.options;"
                      label="&redminetoolbar.button.options.label;" type="menu">
