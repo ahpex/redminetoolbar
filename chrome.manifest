@@ -4,3 +4,4 @@ skin redminetoolbar classic/1.0 chrome/skin/
 locale redminetoolbar en-US chrome/locale/en-US/
 locale redminetoolbar de-DE chrome/locale/de-DE/
 locale redminetoolbar es-ES chrome/locale/es-ES/
+locale redminetoolbar zh-CN chrome/locale/zh-CN/

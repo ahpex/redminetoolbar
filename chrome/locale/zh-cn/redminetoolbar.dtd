@@ -1,0 +1,66 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "None">
+<!ENTITY redminetoolbar.button.loading.label "载入中 ... ...">
+
+<!ENTITY redminetoolbar.button.mypage.label "我的工作台">
+<!ENTITY redminetoolbar.tooltip.mypage "跳转到【我的工作台】">
+
+<!ENTITY redminetoolbar.button.overview.label "概述">
+<!ENTITY redminetoolbar.tooltip.overview "跳转到【项目概述】">
+
+<!ENTITY redminetoolbar.button.activity.label "活动">
+<!ENTITY redminetoolbar.tooltip.activity "跳转到【活动】">
+
+<!ENTITY redminetoolbar.button.issues.label "问题">
+<!ENTITY redminetoolbar.tooltip.issues "跳转到【问题】">
+
+<!ENTITY redminetoolbar.button.newissue.label "新建问题">
+<!ENTITY redminetoolbar.tooltip.newissue "跳转到【新建问题】">
+
+<!ENTITY redminetoolbar.button.news.label "新闻">
+<!ENTITY redminetoolbar.tooltip.news "跳转到【新闻】">
+
+<!ENTITY redminetoolbar.button.docs.label "文档">
+<!ENTITY redminetoolbar.tooltip.docs "跳转到【文档】">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "跳转到【Wiki】">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Wiki 主页">
+<!ENTITY redminetoolbar.button.wikiaddpage.label "编辑 Wiki">
+
+<!ENTITY redminetoolbar.button.files.label "文件">
+<!ENTITY redminetoolbar.tooltip.files "跳转到【文件】">
+
+<!ENTITY redminetoolbar.button.repository.label "仓库">
+<!ENTITY redminetoolbar.tooltip.repository "跳转到【仓库】">
+
+<!ENTITY redminetoolbar.button.options.label "选项">
+<!ENTITY redminetoolbar.tooltip.options "显示选项">
+<!ENTITY redminetoolbar.button.about.label "关于 ...">
+
+<!ENTITY redminetoolbar.textbox.jumptoticket.label "Ticket:">
+
+<!-- Options dialog -->
+<!ENTITY redminetoolbar.options.window.title "Redmine 工具栏 -- 选项">
+<!ENTITY redminetoolbar.options.tabgeneral.label "通用选项">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "名称">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
+<!ENTITY redminetoolbar.options.tabgeneral.add "添加">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "删除">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "全部删除">
+
+<!-- Wikipages dialog -->
+<!ENTITY redminetoolbar.wikipages.window.title "Redmine 工具栏 -- Wiki管理">
+<!ENTITY redminetoolbar.wikipages.help "输入Wiki页名称。">
+<!ENTITY redminetoolbar.wikipages.name "名称">
+<!ENTITY redminetoolbar.wikipages.add "添加">
+<!ENTITY redminetoolbar.wikipages.remove "删除">
+<!ENTITY redminetoolbar.wikipages.removeall "全部删除">
+
+<!-- About dialog -->
+<!ENTITY redminetoolbar.about.window.title "关于 Redmine 工具栏">
+<!ENTITY redminetoolbar.about.author "作者">
+<!ENTITY redminetoolbar.about.contributors "Contributors">
+<!ENTITY redminetoolbar.about.spanishtranslation "Spanish translation">
