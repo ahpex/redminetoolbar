@@ -3,7 +3,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>redminetoolbar@mpietsch.com</em:id>
-    <em:version>0.8.1</em:version>
+    <em:version>0.8.2</em:version>
     <em:type>2</em:type>
     <em:targetApplication>
       <Description>
@@ -19,5 +19,43 @@
     <em:aboutURL>chrome://redminetoolbar/content/about.xul</em:aboutURL>
     <em:optionsURL>chrome://redminetoolbar/content/options.xul</em:optionsURL>
     <em:iconURL>chrome://redminetoolbar/skin/redmine_icon.png</em:iconURL>
+    <em:translator>LuPa (es_ES)</em:translator>
+    <em:translator>Steven Wong (zh_CN)</em:translator>
+    <em:localized>
+      <Description>
+        <em:locale>de_DE</em:locale>
+        <em:name>Redmine Werkzeugleiste</em:name>
+        <em:description>Werkzeugleiste für den einfachen Umgang mit Redmine.</em:description>
+        <em:creator>Michael Pietsch</em:creator>
+        <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>en_US</em:locale>
+        <em:name>Redmine Toolbar</em:name>
+        <em:description>Toolbar for easy access to Redmine projects.</em:description>
+        <em:creator>Michael Pietsch</em:creator>
+        <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>es_ES</em:locale>
+        <em:name>Redmine Toolbar</em:name>
+        <em:description>Toolbar for easy access to Redmine projects.</em:description>
+        <em:creator>Michael Pietsch</em:creator>
+        <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>zh_CN</em:locale>
+        <em:name>Redmine Toolbar</em:name>
+        <em:description>Toolbar for easy access to Redmine projects.</em:description>
+        <em:creator>Michael Pietsch</em:creator>
+        <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+      </Description>
+    </em:localized>
   </Description>
 </RDF>
