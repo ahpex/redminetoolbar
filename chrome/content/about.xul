@@ -15,12 +15,14 @@
         <description value="&redminetoolbar.about.author;" class="RedmineToolbar-About-Title"/>
         <description>Michael Pietsch</description>
         <description value="Homepage" class="RedmineToolbar-About-Title"/>
-        <description>http://www.mpietsch.com/redminetoolbar</description>
+        <label href="http://www.mpietsch.com/redminetoolbar" class="text-link"
+               value="http://www.mpietsch.com/redminetoolbar"/>
+        <label href="https://addons.mozilla.org/de/firefox/addon/redmine-toolbar" class="text-link"
+               value="https://addons.mozilla.org/de/firefox/addon/redmine-toolbar/"/>
         <separator class="groove"/>
         <description value="&redminetoolbar.about.contributors;" class="RedmineToolbar-About-Title"/>
         <hbox>
-            <description value="&redminetoolbar.about.spanishtranslation;"/>
-            <description>LuPa</description>
+            <description>LuPa, Steven Wong</description>
         </hbox>
     </vbox>
     <separator class="groove"/>
