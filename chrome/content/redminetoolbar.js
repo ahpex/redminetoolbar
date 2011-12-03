@@ -138,6 +138,10 @@ var RedmineToolbar= {
 	},
 
   Populate : function(doc) {
+    if (doc == null) {
+       return;
+    }
+
     // Maximum number of menu items
     const MAXENTRIES = 30;
 
