@@ -158,36 +158,40 @@ var RedmineToolbar= {
     var entryElements = doc.evaluate('//myns:entry', doc, resolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
     nbEntries = (entryElements.snapshotLength > MAXENTRIES) ? MAXENTRIES : entryElements.snapshotLength;
     for (var i=0; i < nbEntries; i++) {
-      // Get the single item
-      var entryItem = entryElements.snapshotItem(i);
+       (function(i) {
+          // Get the single item
+          var entryItem = entryElements.snapshotItem(i);
 
-      // Create a new menu item to be added
-      var tempItem = document.createElement("menuitem");
-      
-      // Get the label from the feed entry
-      var title = entryItem.getElementsByTagName('title')[0].firstChild.nodeValue; 
+          // Create a new menu item to be added
+          var tempItem = document.createElement("menuitem");
 
-      // Set the new menu item's label
-      tempItem.setAttribute("label", title);
-      
-      // Add a menu icon
-      if (RedmineToolbar.StartsWith(title, "Wiki edit"))
-        tempItem.setAttribute("class", "RedmineToolbar-Activity-Wiki-Edit");
-      else if (RedmineToolbar.StartsWith(title, "Revision")) 
-        tempItem.setAttribute("class", "RedmineToolbar-Activity-Changeset");
-      else if (RedmineToolbar.StartsWith(title, "Feature")) 
-        tempItem.setAttribute("class", "RedmineToolbar-Activity-Feature");
-      else if (RedmineToolbar.StartsWith(title, "Patch")) 
-        tempItem.setAttribute("class", "RedmineToolbar-Activity-Patch");
+          // Get the label from the feed entry
+          var title = entryItem.getElementsByTagName('title')[0].firstChild.nodeValue;
 
-      // get the URL from the feed entry
-      var url = entryItem.getElementsByTagName('link')[0].getAttribute('href');
+          // Set the new menu item's label
+          tempItem.setAttribute("label", title);
 
-      // Set the new menu item's action
-      tempItem.setAttribute("oncommand", "RedmineToolbar.loadUrl('" + url + "');");
+          // Add a menu icon
+          if (RedmineToolbar.StartsWith(title, "Wiki edit"))
+            tempItem.setAttribute("class", "RedmineToolbar-Activity-Wiki-Edit");
+          else if (RedmineToolbar.StartsWith(title, "Revision"))
+            tempItem.setAttribute("class", "RedmineToolbar-Activity-Changeset");
+          else if (RedmineToolbar.StartsWith(title, "Feature"))
+            tempItem.setAttribute("class", "RedmineToolbar-Activity-Feature");
+          else if (RedmineToolbar.StartsWith(title, "Patch"))
+            tempItem.setAttribute("class", "RedmineToolbar-Activity-Patch");
 
-      // Add the item to out menu
-      menu.appendChild(tempItem);
+          // get the URL from the feed entry
+          var url = entryItem.getElementsByTagName('link')[0].getAttribute('href');
+
+          // Set the new menu item's action
+          tempItem.addEventListener("click", function() {
+            RedmineToolbar.loadUrl(url);
+          }, false);
+
+          // Add the item to out menu
+          menu.appendChild(tempItem);
+       }) (i);
     }
   },
 
@@ -199,7 +203,7 @@ var RedmineToolbar= {
     var menu = document.getElementById("RedmineToolbar-Wiki-Popup");
 
     // Remove all exisiting items first, otherwise the newly created items
-    // are appended to the list. Skip 
+    // are appended to the list. Skip
     var skipEntries = 3;
     for (var i=menu.childNodes.length - 1; i >= skipEntries; i--) {
       menu.removeChild(menu.childNodes.item(i));
@@ -211,12 +215,16 @@ var RedmineToolbar= {
     var children = branch.getChildList("", {});
 
     for (var j=children.length -1; j >= 0; j--) {
-      var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
-      var tempItem = document.createElement("menuitem");
-      tempItem.setAttribute("label", branch.getCharPref(children[j]));
-      var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
-      tempItem.setAttribute("oncommand", "RedmineToolbar.loadUrl('" + link + "');");
-      menu.appendChild(tempItem);
+      (function (i) {
+        var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+        var tempItem = document.createElement("menuitem");
+        tempItem.setAttribute("label", branch.getCharPref(children[j]));
+        var link = RedmineToolbar.getProjectUrl() + '/wiki/' + RedmineToolbar.getPref('currentproject') + '/' + branch.getCharPref(children[j]);
+        tempItem.addEventListener("click", function() {
+           RedmineToolbar.loadUrl(link);
+        }, false);
+        menu.appendChild(tempItem);
+      }) (i);
     }
   },
 
@@ -251,12 +259,16 @@ var RedmineToolbar= {
     while (menu.hasChildNodes())
       menu.removeChild(menu.firstChild);
 
-    for (var i = 0; i < children.length; i++) { 
-      var tempItem = document.createElement("menuitem");
-      var projectName = branch.getCharPref(children[i]);
-      tempItem.setAttribute("label", projectName);
-      tempItem.setAttribute("oncommand", "RedmineToolbar.Change_Project('" + projectName + "');");
-      menu.appendChild(tempItem);
+    for (var i = 0; i < children.length; i++) {
+       (function (i) {
+          var tempItem = document.createElement("menuitem");
+          var projectName = branch.getCharPref(children[i]);
+          tempItem.setAttribute("label", projectName);
+          tempItem.addEventListener("click", function() {
+            RedmineToolbar.Change_Project(projectName);
+          }, false);
+          menu.appendChild(tempItem);
+       }) (i);
     }
   },
 
