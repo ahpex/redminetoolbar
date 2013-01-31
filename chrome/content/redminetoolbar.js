@@ -47,7 +47,7 @@ var RedmineToolbar= {
   },
 
   loadUrl : function(url) {
-    openUILink(encodeURI(url), "current", false, true);
+    openUILinkIn(encodeURI(url), "current", false, null, null);
   },
 
   loadPage : function(page) {
