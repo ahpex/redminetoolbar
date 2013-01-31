@@ -39,8 +39,15 @@ var RedmineToolbar= {
 
   Change_Project_Label : function() {
     var projButton = document.getElementById('RedmineToolbar-Project-Button');
-    if (projButton)
+    if (projButton) {
        projButton.setAttribute('label', RedmineToolbar.getPref('currentproject'));
+    }
+    
+    // Delete items in the activity drop-down
+    var menu = document.getElementById("RedmineToolbar-Activity-Popup");
+    for (var i=menu.childNodes.length - 1; i >= 0; i--) {
+      menu.removeChild(menu.childNodes.item(i));
+    }
   },
 
   Exit : function() {
@@ -114,13 +121,13 @@ var RedmineToolbar= {
   PopulateActivities : function() {
     var host = RedmineToolbar.getProjectUrl();
     var currProj = RedmineToolbar.getPref('currentproject');
-    var url = host + "/projects/activity/" + currProj + "?format=atom";
+    var url = host + "/projects/" + currProj + "/activity.atom";
     if (RedmineToolbar.UrlExists(url)) {
-			RedmineToolbar.getFeed(url);
-		} else {
-			url = host + "/projects/" + currProj + "/activity.atom";
-			RedmineToolbar.getFeed(url);
-		}
+		RedmineToolbar.getFeed(url);
+	} else {
+        url = host + "/projects/activity/" + currProj + "?format=atom";
+	    RedmineToolbar.getFeed(url);
+	}
   },
 
   UrlExists : function(url) {
