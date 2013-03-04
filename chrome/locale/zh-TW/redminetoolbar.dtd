@@ -1,0 +1,73 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "None">
+<!ENTITY redminetoolbar.button.loading.label "讀取中...">
+
+<!ENTITY redminetoolbar.button.mypage.label "帳戶首頁">
+<!ENTITY redminetoolbar.tooltip.mypage "前往「帳戶首頁」">
+
+<!ENTITY redminetoolbar.button.overview.label "概觀">
+<!ENTITY redminetoolbar.tooltip.overview "前往「概觀」">
+
+<!ENTITY redminetoolbar.button.activity.label "活動">
+<!ENTITY redminetoolbar.tooltip.activity "前往「活動」">
+
+<!ENTITY redminetoolbar.button.issues.label "問題清單">
+<!ENTITY redminetoolbar.tooltip.issues "前往「問題清單」">
+
+<!ENTITY redminetoolbar.button.newissue.label "建立新問題">
+<!ENTITY redminetoolbar.tooltip.newissue "前往「建立新問題」">
+
+<!ENTITY redminetoolbar.button.news.label "新聞">
+<!ENTITY redminetoolbar.tooltip.news "前往「新聞」">
+
+<!ENTITY redminetoolbar.button.docs.label "文件">
+<!ENTITY redminetoolbar.tooltip.docs "前往「文件」">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "前往「Wiki」">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Wiki 首頁">
+<!ENTITY redminetoolbar.button.wikiaddpage.label "編輯 Wiki">
+
+<!ENTITY redminetoolbar.button.files.label "檔案">
+<!ENTITY redminetoolbar.tooltip.files "前往「檔案」">
+
+<!ENTITY redminetoolbar.button.repository.label "版本控管">
+<!ENTITY redminetoolbar.tooltip.repository "前往「版本控管」">
+
+<!ENTITY redminetoolbar.button.options.label "選項">
+<!ENTITY redminetoolbar.tooltip.options "顯示選項">
+<!ENTITY redminetoolbar.button.about.label "關於...">
+
+<!-- Options dialog -->
+<!ENTITY redminetoolbar.options.window.title "Redmine Toolbar -- 選項">
+<!ENTITY redminetoolbar.options.tabgeneral.label "一般">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "專案名稱">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "Redmine 網址">
+<!ENTITY redminetoolbar.options.tabgeneral.add "加入清單">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "刪除">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "全部刪除">
+
+<!-- Wikipages dialog -->
+<!ENTITY redminetoolbar.wikipages.window.title "Redmine Toolbar -- Wiki 頁面">
+<!ENTITY redminetoolbar.wikipages.help "輸入 Wiki 頁面名稱。">
+<!ENTITY redminetoolbar.wikipages.name "頁面名稱">
+<!ENTITY redminetoolbar.wikipages.add "加入清單">
+<!ENTITY redminetoolbar.wikipages.remove "刪除">
+<!ENTITY redminetoolbar.wikipages.removeall "全部刪除">
+
+<!-- About dialog -->
+<!ENTITY redminetoolbar.about.window.title "關於 Redmine Toolbar">
+<!ENTITY redminetoolbar.about.author "作者">
+<!ENTITY redminetoolbar.about.contributors "貢獻者">
+<!ENTITY redminetoolbar.about.spanishtranslation "西班牙語翻譯">
+
+<!-- Search -->
+<!ENTITY redminetoolbar.button.searchwhat.allwords.label "所有文字">
+<!ENTITY redminetoolbar.button.searchwhat.titlesonly.label "只搜尋標題">
+<!ENTITY redminetoolbar.button.searchcondition.wikipages.label "Wiki 頁面">
+<!ENTITY redminetoolbar.button.searchcondition.issues.label "問題">
+<!ENTITY redminetoolbar.button.searchcondition.news.label "新聞">
+<!ENTITY redminetoolbar.button.searchcondition.changesets.label "變更">
+<!ENTITY redminetoolbar.button.searchcondition.messages.label "訊息">
