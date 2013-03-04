@@ -5,3 +5,4 @@ locale redminetoolbar en-US jar:chrome/redminetoolbar.jar!/locale/en-US/
 locale redminetoolbar de-DE jar:chrome/redminetoolbar.jar!/locale/de-DE/
 locale redminetoolbar es-ES jar:chrome/redminetoolbar.jar!/locale/es-ES/
 locale redminetoolbar zh-CN jar:chrome/redminetoolbar.jar!/locale/zh-CN/
+locale redminetoolbar zh-TW jar:chrome/redminetoolbar.jar!/locale/zh-TW/
