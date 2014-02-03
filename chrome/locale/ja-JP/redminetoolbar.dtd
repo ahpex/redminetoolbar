@@ -1,0 +1,73 @@
+<!-- Toolbar button labels and tooltips -->
+<!ENTITY redminetoolbar.button.project.label "なし">
+<!ENTITY redminetoolbar.button.loading.label "読み込み中...">
+
+<!ENTITY redminetoolbar.button.mypage.label "マイ ページ">
+<!ENTITY redminetoolbar.tooltip.mypage "'マイ ページ'を開く">
+
+<!ENTITY redminetoolbar.button.overview.label "概要">
+<!ENTITY redminetoolbar.tooltip.overview "'概要'を開く">
+
+<!ENTITY redminetoolbar.button.activity.label "活動">
+<!ENTITY redminetoolbar.tooltip.activity "'活動'を開く">
+
+<!ENTITY redminetoolbar.button.issues.label "チケット">
+<!ENTITY redminetoolbar.tooltip.issues "'チケット'を開く">
+
+<!ENTITY redminetoolbar.button.newissue.label "新しいチケット">
+<!ENTITY redminetoolbar.tooltip.newissue "'新しいチケット'を作成する">
+
+<!ENTITY redminetoolbar.button.news.label "ニュース">
+<!ENTITY redminetoolbar.tooltip.news "'ニュース'を開く">
+
+<!ENTITY redminetoolbar.button.docs.label "文章">
+<!ENTITY redminetoolbar.tooltip.docs "'文章'を開く">
+
+<!ENTITY redminetoolbar.button.wiki.label "Wiki">
+<!ENTITY redminetoolbar.tooltip.wiki "'Wiki'を開く">
+<!ENTITY redminetoolbar.button.wikimainpage.label "Wiki メインページ">
+<!ENTITY redminetoolbar.button.wikiaddpage.label "Wiki ページを編集">
+
+<!ENTITY redminetoolbar.button.files.label "ファイル">
+<!ENTITY redminetoolbar.tooltip.files "'ファイル'を開く">
+
+<!ENTITY redminetoolbar.button.repository.label "リポジトリ">
+<!ENTITY redminetoolbar.tooltip.repository "'リポジトリ'を開く">
+
+<!ENTITY redminetoolbar.button.options.label "オプション">
+<!ENTITY redminetoolbar.tooltip.options "オプションを表示">
+<!ENTITY redminetoolbar.button.about.label "このアドオンについて...">
+
+<!-- Options dialog -->
+<!ENTITY redminetoolbar.options.window.title "Redmine ツールバー オプション">
+<!ENTITY redminetoolbar.options.tabgeneral.label "全般">
+
+<!-- General options tab -->
+<!ENTITY redminetoolbar.options.tabgeneral.projectname "名称">
+<!ENTITY redminetoolbar.options.tabgeneral.projecturl "URL">
+<!ENTITY redminetoolbar.options.tabgeneral.add "追加">
+<!ENTITY redminetoolbar.options.tabgeneral.remove "削除">
+<!ENTITY redminetoolbar.options.tabgeneral.removeall "すべて削除">
+
+<!-- Wikipages dialog -->
+<!ENTITY redminetoolbar.wikipages.window.title "Redmine ツールバー Wiki ページ">
+<!ENTITY redminetoolbar.wikipages.help "wikiに記載するようなwikiページの名前を入力してください。(大文字小文字は区別されます)">
+<!ENTITY redminetoolbar.wikipages.name "名称">
+<!ENTITY redminetoolbar.wikipages.add "追加">
+<!ENTITY redminetoolbar.wikipages.remove "削除">
+<!ENTITY redminetoolbar.wikipages.removeall "すべて削除">
+
+<!-- About dialog -->
+<!ENTITY redminetoolbar.about.window.title "Redmine ツールバーについて">
+<!ENTITY redminetoolbar.about.author "作者">
+<!ENTITY redminetoolbar.about.contributors "貢献者">
+<!ENTITY redminetoolbar.about.spanishtranslation "スペイン語 翻訳">
+
+<!-- Search -->
+<!ENTITY redminetoolbar.button.searchwhat.allwords.label "すべての単語">
+<!ENTITY redminetoolbar.button.searchwhat.titlesonly.label "タイトルのみ">
+<!ENTITY redminetoolbar.button.searchcondition.wikipages.label "Wiki ページ">
+<!ENTITY redminetoolbar.button.searchcondition.issues.label "チケット">
+<!ENTITY redminetoolbar.button.searchcondition.news.label "ニュース">
+<!ENTITY redminetoolbar.button.searchcondition.changesets.label "更新履歴">
+<!ENTITY redminetoolbar.button.searchcondition.messages.label "メッセージ">
