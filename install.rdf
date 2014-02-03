@@ -21,6 +21,7 @@
     <em:iconURL>chrome://redminetoolbar/skin/redmine_icon.png</em:iconURL>
     <em:translator>LuPa (es-ES)</em:translator>
     <em:translator>Steven Wong (zh-CN)</em:translator>
+    <em:translator>in_dow (ja-JP)</em:translator>
     <em:localized>
       <Description>
         <em:locale>de-DE</em:locale>
@@ -44,6 +45,15 @@
         <em:locale>es-ES</em:locale>
         <em:name>Redmine Toolbar</em:name>
         <em:description>Toolbar for easy access to Redmine projects.</em:description>
+        <em:creator>Michael Pietsch</em:creator>
+        <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>ja-JP</em:locale>
+        <em:name>Redmine ツールバー</em:name>
+        <em:description>Redmineプロジェクトへ簡単にアクセスするためのツールバー</em:description>
         <em:creator>Michael Pietsch</em:creator>
         <em:homepageURL>http://www.mpietsch.com/redminetoolbar</em:homepageURL>
       </Description>
